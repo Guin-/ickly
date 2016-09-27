@@ -1,6 +1,14 @@
+require('bootstrap/dist/css/bootstrap.min.css');
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 import HelloWorld from './components/helloWorld';
+import TitleHeader from './components/pageHeader';
 
-ReactDOM.render(<HelloWorld />, document.getElementById('react-app'))
+ReactDOM.render(
+  <div class='app-container'>
+    <TitleHeader />
+    <HelloWorld />
+  </div>,
+  document.getElementById('react-app'))
 
