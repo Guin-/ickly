@@ -12,3 +12,4 @@ ReactDOM.render(
   </div>,
   document.getElementById('react-app'))
 
+module.hot.accept()

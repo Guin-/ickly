@@ -9,7 +9,7 @@ class TitleHeader extends React.Component {
   render() {
     return (
       <PageHeader>
-        Ickly Page Header
+        Ickly Page Header Hot Reloaded!
       </PageHeader>
     )
   }
