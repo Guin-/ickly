@@ -11,7 +11,10 @@ A search interface for NYC Restaurant Inspection Results data
 
   `$ npm install`
 
-3. Set up your local database in `settings.py` and run migrations
+3. Create a `secret_settings` file to store the SECRET_KEY and personal database settings
+   to be used in `backend/ickly/settings`
+
+4. Set up your local database and run migrations
 
 ## Development
 
