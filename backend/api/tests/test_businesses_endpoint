@@ -1,0 +1,206 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.7.0 CPython/2.7.13 Darwin/15.6.0]
+    method: GET
+    uri: http://localhost:8000/api/v1/businesses/
+  response:
+    body: {string: "{\"count\":99,\"next\":null,\"previous\":null,\"results\":[{\"\
+        camis\":\"41577662\",\"dba\":\"LEON KITCHEN\",\"address\":\"1610 FULTON STREET\
+        \ BROOKLYN 11213\",\"cuisine_description\":\"Chinese\"},{\"camis\":\"41627976\"\
+        ,\"dba\":\"GREEN GARDEN\",\"address\":\"2220 154 STREET QUEENS 11357\",\"\
+        cuisine_description\":\"Chinese\"},{\"camis\":\"41508109\",\"dba\":\"PURE\
+        \ THAI RESTAURANT\",\"address\":\"766 9 AVENUE MANHATTAN 10019\",\"cuisine_description\"\
+        :\"Thai\"},{\"camis\":\"50000995\",\"dba\":\"THE MEATBALL SHOP\",\"address\"\
+        :\"1462 2ND AVENUE MANHATTAN 10075\",\"cuisine_description\":\"American\"\
+        },{\"camis\":\"41719800\",\"dba\":\"SALSA Y SALSA\",\"address\":\"206 SEVENTH\
+        \ AVENUE MANHATTAN 10011\",\"cuisine_description\":\"Mexican\"},{\"camis\"\
+        :\"40901879\",\"dba\":\"TAVERNA KYCLADES\",\"address\":\"3307 DITMARS BOULEVARD\
+        \ QUEENS 11105\",\"cuisine_description\":\"Seafood\"},{\"camis\":\"41625305\"\
+        ,\"dba\":\"STEAK 'N SHAKE\",\"address\":\"1695 BROADWAY MANHATTAN 10019\"\
+        ,\"cuisine_description\":\"Hamburgers\"},{\"camis\":\"50051705\",\"dba\":\"\
+        BIG WONG CHINESE RESTAURANT\",\"address\":\"3975A LACONIA AVE BRONX 10466\"\
+        ,\"cuisine_description\":\"Chinese\"},{\"camis\":\"41639964\",\"dba\":\"THE\
+        \ little BEET TABLE\",\"address\":\"333 PARK AVENUE SOUTH MANHATTAN 10010\"\
+        ,\"cuisine_description\":\"American\"},{\"camis\":\"41690386\",\"dba\":\"\
+        KORYODANG BAKERY AND CAFE\",\"address\":\"21902 NORTHERN BOULEVARD QUEENS\
+        \ 11361\",\"cuisine_description\":\"Bakery\"},{\"camis\":\"40703796\",\"dba\"\
+        :\"PARK SLOPE ALE HOUSE\",\"address\":\"356 6 AVENUE BROOKLYN 11215\",\"cuisine_description\"\
+        :\"American\"},{\"camis\":\"50044828\",\"dba\":\"EGGLOO\",\"address\":\"60\
+        \ MULBERRY ST MANHATTAN 10013\",\"cuisine_description\":\"Ice Cream, Gelato,\
+        \ Yogurt, Ices\"},{\"camis\":\"41240553\",\"dba\":\"ENOTECA MARIA\",\"address\"\
+        :\"27 HYATT STREET STATEN ISLAND 10301\",\"cuisine_description\":\"Italian\"\
+        },{\"camis\":\"40888264\",\"dba\":\"SUBWAY\",\"address\":\"21814 JAMAICA AVENUE\
+        \ QUEENS 11428\",\"cuisine_description\":\"Sandwiches\"},{\"camis\":\"50007655\"\
+        ,\"dba\":\"SUBWAY\",\"address\":\"1010 NOSTRAND AVE BROOKLYN 11225\",\"cuisine_description\"\
+        :\"Sandwiches/Salads/Mixed Buffet\"},{\"camis\":\"41160885\",\"dba\":\"HOP\
+        \ LEE RESTARANT\",\"address\":\"16 MOTT STREET MANHATTAN 10013\",\"cuisine_description\"\
+        :\"Chinese\"},{\"camis\":\"50035962\",\"dba\":\"EAST GARDEN\",\"address\"\
+        :\"1685 1ST AVE MANHATTAN 10128\",\"cuisine_description\":\"Chinese\"},{\"\
+        camis\":\"50040897\",\"dba\":\"TOUS LES JOURS\",\"address\":\"7 DIVISION ST\
+        \ MANHATTAN 10002\",\"cuisine_description\":\"Chinese\"},{\"camis\":\"40385974\"\
+        ,\"dba\":\"DAKOTA DINER\",\"address\":\"921 RICHMOND AVENUE STATEN ISLAND\
+        \ 10314\",\"cuisine_description\":\"American\"},{\"camis\":\"50018609\",\"\
+        dba\":\"TACOS COATZINGO\",\"address\":\"4018 82ND ST QUEENS 11373\",\"cuisine_description\"\
+        :\"Latin (Cuban, Dominican, Puerto Rican, South & Central American)\"},{\"\
+        camis\":\"40800072\",\"dba\":\"SUTTON PIZZA & GYRO\",\"address\":\"1140 1\
+        \ AVENUE MANHATTAN 10065\",\"cuisine_description\":\"Pizza\"},{\"camis\":\"\
+        40367241\",\"dba\":\"JG MELON RESTAURANT\",\"address\":\"1291 3 AVENUE MANHATTAN\
+        \ 10021\",\"cuisine_description\":\"American\"},{\"camis\":\"40797688\",\"\
+        dba\":\"TRIPLE CROWN DINER\",\"address\":\"24827 JAMAICA AVENUE QUEENS 11426\"\
+        ,\"cuisine_description\":\"American\"},{\"camis\":\"50000377\",\"dba\":\"\
+        STEINWAY RESTAURANT\",\"address\":\"10205 DITMARS BOULEVARD QUEENS 11369\"\
+        ,\"cuisine_description\":\"American\"},{\"camis\":\"41692108\",\"dba\":\"\
+        RUNNER & STONE\",\"address\":\"285 3 AVENUE BROOKLYN 11215\",\"cuisine_description\"\
+        :\"American\"},{\"camis\":\"41714688\",\"dba\":\"MILLER'S ALE HOUSE\",\"address\"\
+        :\"6135 JUNCTION BOULEVARD QUEENS 11374\",\"cuisine_description\":\"American\"\
+        },{\"camis\":\"50039787\",\"dba\":\"PERPETUUM CAFE\",\"address\":\"124 W 25TH\
+        \ ST MANHATTAN 10001\",\"cuisine_description\":\"Caf\xC3\xA9/Coffee/Tea\"\
+        },{\"camis\":\"41178998\",\"dba\":\"BESSEMER TRUST CO\",\"address\":\"630\
+        \ 5 AVENUE MANHATTAN 10111\",\"cuisine_description\":\"American\"},{\"camis\"\
+        :\"41248529\",\"dba\":\"ROUTE 66 CAFE\",\"address\":\"858 9 AVENUE MANHATTAN\
+        \ 10019\",\"cuisine_description\":\"American\"},{\"camis\":\"50001560\",\"\
+        dba\":\"RED CORK\",\"address\":\"330 WEST 58 STREET MANHATTAN 10019\",\"cuisine_description\"\
+        :\"French\"},{\"camis\":\"41335405\",\"dba\":\"RADISSON JFK - CONNECTIONS\"\
+        ,\"address\":\"13530 140 STREET QUEENS 11436\",\"cuisine_description\":\"\
+        American\"},{\"camis\":\"50001396\",\"dba\":\"PIZZA PLUS\",\"address\":\"\
+        2253 3RD AVE MANHATTAN 10035\",\"cuisine_description\":\"Pizza\"},{\"camis\"\
+        :\"41721550\",\"dba\":\"THE SAINT CATHERINE\",\"address\":\"660 WASHINGTON\
+        \ AVENUE BROOKLYN 11238\",\"cuisine_description\":\"Sandwiches/Salads/Mixed\
+        \ Buffet\"},{\"camis\":\"41387793\",\"dba\":\"PAOLA'S\",\"address\":\"1295\
+        \ MADISON AVENUE MANHATTAN 10128\",\"cuisine_description\":\"Italian\"},{\"\
+        camis\":\"41262161\",\"dba\":\"DUNKIN' DONUTS\",\"address\":\"2419 CONEY ISLAND\
+        \ AVENUE BROOKLYN 11223\",\"cuisine_description\":\"Donuts\"},{\"camis\":\"\
+        50032852\",\"dba\":\"DAILY BAGEL\",\"address\":\"1111 1ST AVE MANHATTAN 10065\"\
+        ,\"cuisine_description\":\"American\"},{\"camis\":\"41232125\",\"dba\":\"\
+        VELVET LOUNGE\",\"address\":\"174 BROADWAY BROOKLYN 11211\",\"cuisine_description\"\
+        :\"American\"},{\"camis\":\"50038814\",\"dba\":\"MAYLIN GARDEN\",\"address\"\
+        :\"5506 8TH AVE BROOKLYN 11220\",\"cuisine_description\":\"Chinese\"},{\"\
+        camis\":\"41485154\",\"dba\":\"OUTBACK STEAKHOUSE\",\"address\":\"280 MARSH\
+        \ AVENUE STATEN ISLAND 10314\",\"cuisine_description\":\"Steak\"},{\"camis\"\
+        :\"41028194\",\"dba\":\"SAI'S CAFE\",\"address\":\"6003 FORT HAMILTON PARKWAY\
+        \ BROOKLYN 11219\",\"cuisine_description\":\"Chinese\"},{\"camis\":\"50003921\"\
+        ,\"dba\":\"EL TORO TAQUERIA\",\"address\":\"89 FORT GREENE PL BROOKLYN 11217\"\
+        ,\"cuisine_description\":\"Mexican\"},{\"camis\":\"40711301\",\"dba\":\"CHICKEN\
+        \ FESTIVAL\",\"address\":\"2919 DITMARS BOULEVARD QUEENS 11105\",\"cuisine_description\"\
+        :\"Chicken\"},{\"camis\":\"40612915\",\"dba\":\"LUCKY STAR RESTAURANT\",\"\
+        address\":\"13 MARCUS GARVEY BLVD BROOKLYN 11206\",\"cuisine_description\"\
+        :\"Caribbean\"},{\"camis\":\"40968447\",\"dba\":\"CARACAS AREPA /TO GO\",\"\
+        address\":\"91 EAST    7 STREET MANHATTAN 10009\",\"cuisine_description\"\
+        :\"Latin (Cuban, Dominican, Puerto Rican, South & Central American)\"},{\"\
+        camis\":\"41117321\",\"dba\":\"RB BAR\",\"address\":\"537 EAST  183 STREET\
+        \ BRONX 10458\",\"cuisine_description\":\"Bottled beverages, including water,\
+        \ sodas, juices, etc.\"},{\"camis\":\"40688834\",\"dba\":\"SEGUINE BAGEL BAKERY\"\
+        ,\"address\":\"5840 AMBOY ROAD STATEN ISLAND 10309\",\"cuisine_description\"\
+        :\"Delicatessen\"},{\"camis\":\"41427008\",\"dba\":\"GORDON BENNETT\",\"address\"\
+        :\"109 SOUTH    6 STREET BROOKLYN 11249\",\"cuisine_description\":\"American\"\
+        },{\"camis\":\"50051013\",\"dba\":\"Lake Toba\",\"address\":\"1643 2ND AVE\
+        \ MANHATTAN 10028\",\"cuisine_description\":\"Chinese/Japanese\"},{\"camis\"\
+        :\"41378948\",\"dba\":\"MINETTA TAVERN\",\"address\":\"113 MACDOUGAL STREET\
+        \ MANHATTAN 10012\",\"cuisine_description\":\"French\"},{\"camis\":\"50014495\"\
+        ,\"dba\":\"EL CLUB VALLE RESTAURANT CAFFEE\",\"address\":\"1298 WESTCHESTER\
+        \ AVE BRONX 10459\",\"cuisine_description\":\"Spanish\"},{\"camis\":\"50037952\"\
+        ,\"dba\":\"ROUTINE\",\"address\":\"631 WILSON AVE BROOKLYN 11207\",\"cuisine_description\"\
+        :\"Caf\xC3\xA9/Coffee/Tea\"},{\"camis\":\"41696825\",\"dba\":\"CHARLEY DELI\
+        \ AND KITCHEN\",\"address\":\"14527 228 STREET QUEENS 11413\",\"cuisine_description\"\
+        :\"Caribbean\"},{\"camis\":\"50011004\",\"dba\":\"BRAVO AFRICAN RESTAURANT\"\
+        ,\"address\":\"1473 WESTCHESTER AVE BRONX 10472\",\"cuisine_description\"\
+        :\"African\"},{\"camis\":\"40574733\",\"dba\":\"VINNY'S OF CARROLL GARDEN\
+        \ RESTAURANT & LUNCHEONETT\",\"address\":\"295 SMITH STREET BROOKLYN 11231\"\
+        ,\"cuisine_description\":\"Italian\"},{\"camis\":\"41659910\",\"dba\":\"EAST\
+        \ BROADWAY PIZZA & FRIED CHICKEN RESTAURANT\",\"address\":\"1474 BROADWAY\
+        \ BROOKLYN 11221\",\"cuisine_description\":\"Spanish\"},{\"camis\":\"50001734\"\
+        ,\"dba\":\"REDFARM\",\"address\":\"2170 BROADWAY MANHATTAN 10024\",\"cuisine_description\"\
+        :\"Asian\"},{\"camis\":\"40581692\",\"dba\":\"MAZ MEZCAL\",\"address\":\"\
+        316 EAST   86 STREET MANHATTAN 10028\",\"cuisine_description\":\"Mexican\"\
+        },{\"camis\":\"41117663\",\"dba\":\"RIVIERA\",\"address\":\"3448 STEINWAY\
+        \ STREET QUEENS 11101\",\"cuisine_description\":\"American\"},{\"camis\":\"\
+        50001970\",\"dba\":\"CROWN FRIED CHICKEN\",\"address\":\"1591 BROADWAY BROOKLYN\
+        \ 11207\",\"cuisine_description\":\"American\"},{\"camis\":\"50045566\",\"\
+        dba\":\"CASA MALINCHE\",\"address\":\"3078 CONEY ISLAND AVE BROOKLYN 11235\"\
+        ,\"cuisine_description\":\"Mexican\"},{\"camis\":\"41600522\",\"dba\":\"LUIGI\
+        \ PIZZERIA & RISTORANTE\",\"address\":\"1701 1 AVENUE MANHATTAN 10128\",\"\
+        cuisine_description\":\"Pizza\"},{\"camis\":\"41655550\",\"dba\":\"ETHOS GALLERY\"\
+        ,\"address\":\"905 1 AVENUE MANHATTAN 10022\",\"cuisine_description\":\"Greek\"\
+        },{\"camis\":\"41040222\",\"dba\":\"EL RINCONCITO DE NAGUA\",\"address\":\"\
+        7620 JAMAICA AVENUE QUEENS 11421\",\"cuisine_description\":\"Latin (Cuban,\
+        \ Dominican, Puerto Rican, South & Central American)\"},{\"camis\":\"41267080\"\
+        ,\"dba\":\"NEW YORK STYLE EATS\",\"address\":\"4502 QUEENS BOULEVARD QUEENS\
+        \ 11104\",\"cuisine_description\":\"American\"},{\"camis\":\"50012107\",\"\
+        dba\":\"GOOD HOPE RESTAURANT\",\"address\":\"121-15 LIBERTY AVE QUEENS 11419\"\
+        ,\"cuisine_description\":\"Chinese\"},{\"camis\":\"50033339\",\"dba\":\"BITE\
+        \ OF HONG KONG\",\"address\":\"81 CHRYSTIE ST MANHATTAN 10002\",\"cuisine_description\"\
+        :\"Chinese\"},{\"camis\":\"41480427\",\"dba\":\"YEMEN CAFE & RESTAURANT\"\
+        ,\"address\":\"176 ATLANTIC AVENUE BROOKLYN 11201\",\"cuisine_description\"\
+        :\"Middle Eastern\"},{\"camis\":\"41486245\",\"dba\":\"NEW PEKING\",\"address\"\
+        :\"344 CLASSON AVENUE BROOKLYN 11238\",\"cuisine_description\":\"Chinese\"\
+        },{\"camis\":\"50039095\",\"dba\":\"WAHLBURGERS\",\"address\":\"3015 STILLWELL\
+        \ AVE BROOKLYN 11224\",\"cuisine_description\":\"Hamburgers\"},{\"camis\"\
+        :\"50010490\",\"dba\":\"WENDY'S\",\"address\":\"85 NASSAU ST MANHATTAN 10038\"\
+        ,\"cuisine_description\":\"American\"},{\"camis\":\"41238494\",\"dba\":\"\
+        KOWLOON CAFE\",\"address\":\"2365 86 STREET BROOKLYN 11214\",\"cuisine_description\"\
+        :\"Chinese\"},{\"camis\":\"41700903\",\"dba\":\"CHINA KING FOOD\",\"address\"\
+        :\"8902 165 STREET QUEENS 11432\",\"cuisine_description\":\"Asian\"},{\"camis\"\
+        :\"41276395\",\"dba\":\"SAM'S PIZZA\",\"address\":\"232 WEST  231 STREET BRONX\
+        \ 10463\",\"cuisine_description\":\"Pizza\"},{\"camis\":\"41348416\",\"dba\"\
+        :\"JAYSE CATERING\",\"address\":\"261 HURON STREET BROOKLYN 11222\",\"cuisine_description\"\
+        :\"American\"},{\"camis\":\"50017113\",\"dba\":\"GRAND ST PIZZA\",\"address\"\
+        :\"800 GRAND ST BROOKLYN 11211\",\"cuisine_description\":\"Pizza\"},{\"camis\"\
+        :\"40423532\",\"dba\":\"V & V BAKERY\",\"address\":\"6119 ROOSEVELT AVENUE\
+        \ QUEENS 11377\",\"cuisine_description\":\"Bakery\"},{\"camis\":\"41141755\"\
+        ,\"dba\":\"JADE GARDEN\",\"address\":\"17012 HILLSIDE AVENUE QUEENS 11432\"\
+        ,\"cuisine_description\":\"Chinese\"},{\"camis\":\"41558704\",\"dba\":\"LITTLE\
+        \ PEPPER SICHUAN RESTAURANT\",\"address\":\"1824 COLLEGE POINT BOULEARD QUEENS\
+        \ 11356\",\"cuisine_description\":\"Chinese\"},{\"camis\":\"41423288\",\"\
+        dba\":\"MAPLE GARDEN\",\"address\":\"4209 MAIN STREET QUEENS 11355\",\"cuisine_description\"\
+        :\"Chinese\"},{\"camis\":\"41700520\",\"dba\":\"HUNTER'S\",\"address\":\"\
+        213 SMITH STREET BROOKLYN 11201\",\"cuisine_description\":\"American\"},{\"\
+        camis\":\"50040327\",\"dba\":\"FAWKNER\",\"address\":\"191 SMITH ST BROOKLYN\
+        \ 11201\",\"cuisine_description\":\"American\"},{\"camis\":\"50015076\",\"\
+        dba\":\"BLUE MOON CHICKEN DELI & PIZZA\",\"address\":\"1249 SUTTER AVE BROOKLYN\
+        \ 11208\",\"cuisine_description\":\"Chicken\"},{\"camis\":\"50041326\",\"\
+        dba\":\"KLASSIX RESTAURANT & BAR\",\"address\":\"5419 CHURCH AVE BROOKLYN\
+        \ 11203\",\"cuisine_description\":\"Caribbean\"},{\"camis\":\"50001057\",\"\
+        dba\":\"DUNKIN' DONUTS\",\"address\":\"NKA JFK INTERNATIONAL AIRPORT QUEENS\
+        \ 11430\",\"cuisine_description\":\"Donuts\"},{\"camis\":\"40720587\",\"dba\"\
+        :\"KARMA\",\"address\":\"51 1 AVENUE MANHATTAN 10003\",\"cuisine_description\"\
+        :\"American\"},{\"camis\":\"41664870\",\"dba\":\"KUMO SUSHI\",\"address\"\
+        :\"512 COURT STREET BROOKLYN 11231\",\"cuisine_description\":\"Japanese\"\
+        },{\"camis\":\"40626388\",\"dba\":\"THE ESPLANADE\",\"address\":\"305 WEST\
+        \ END AVENUE MANHATTAN 10023\",\"cuisine_description\":\"Jewish/Kosher\"},{\"\
+        camis\":\"41291395\",\"dba\":\"LOUNGE 247 I M O K\",\"address\":\"247 ELDRIDGE\
+        \ STREET MANHATTAN 10002\",\"cuisine_description\":\"American\"},{\"camis\"\
+        :\"41582648\",\"dba\":\"THE IRISH EXIT\",\"address\":\"978 2 AVENUE MANHATTAN\
+        \ 10022\",\"cuisine_description\":\"Irish\"},{\"camis\":\"41034980\",\"dba\"\
+        :\"MENKUI TEI\",\"address\":\"63 COOPER SQUARE MANHATTAN 10003\",\"cuisine_description\"\
+        :\"Japanese\"},{\"camis\":\"41298061\",\"dba\":\"JUANITA NATIONAL COFFEE\"\
+        ,\"address\":\"12711 WILLETS POINT BOULEVARD QUEENS 11368\",\"cuisine_description\"\
+        :\"Peruvian\"},{\"camis\":\"40890246\",\"dba\":\"HAPPY RESTAURANT\",\"address\"\
+        :\"957 FULTON STREET BROOKLYN 11238\",\"cuisine_description\":\"Chinese\"\
+        },{\"camis\":\"41603124\",\"dba\":\"LUCKY SEVEN TAPAS BAR\",\"address\":\"\
+        1455 ST NICHOLAS AVENUE MANHATTAN 10033\",\"cuisine_description\":\"Latin\
+        \ (Cuban, Dominican, Puerto Rican, South & Central American)\"},{\"camis\"\
+        :\"41375794\",\"dba\":\"SUSHI TOKYO\",\"address\":\"1360 CONEY ISLAND AVE\
+        \ BROOKLYN 11230\",\"cuisine_description\":\"Jewish/Kosher\"},{\"camis\":\"\
+        50003300\",\"dba\":\"PANDA CAFE\",\"address\":\"8331 BROADWAY QUEENS 11373\"\
+        ,\"cuisine_description\":\"Asian\"},{\"camis\":\"41717461\",\"dba\":\"EL TORO\
+        \ MEXICAN GRILL\",\"address\":\"69 NEW STREET MANHATTAN 10004\",\"cuisine_description\"\
+        :\"Mexican\"},{\"camis\":\"40996005\",\"dba\":\"N & D PIZZA\",\"address\"\
+        :\"2823 AVENUE U BROOKLYN 11229\",\"cuisine_description\":\"Pizza\"},{\"camis\"\
+        :\"40672926\",\"dba\":\"MINAR INDIAN RESTAURANT\",\"address\":\"5 WEST   31\
+        \ STREET MANHATTAN 10001\",\"cuisine_description\":\"Indian\"},{\"camis\"\
+        :\"41716200\",\"dba\":\"LITTLE CAESARS\",\"address\":\"841 EAST  149 STREET\
+        \ BRONX 10455\",\"cuisine_description\":\"Pizza\"}]}"}
+    headers:
+      allow: ['GET, HEAD, OPTIONS']
+      content-type: [application/json]
+      date: ['Wed, 25 Jan 2017 01:14:59 GMT']
+      server: [WSGIServer/0.1 Python/2.7.13]
+      vary: ['Accept, Cookie']
+      x-frame-options: [SAMEORIGIN]
+    status: {code: 200, message: OK}
+version: 1
