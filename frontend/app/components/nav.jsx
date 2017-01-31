@@ -9,7 +9,7 @@ class Navigation extends React.Component {
   render() {
     return (
 
-      <Navbar inverse fixedTop collapseOnSelect>
+      <Navbar inverse fixedTop >
         <Navbar.Header>
           <Navbar.Brand>
             <a href="#">Ickly</a>
@@ -17,13 +17,9 @@ class Navigation extends React.Component {
           <Navbar.Toggle />
         </Navbar.Header>
         <Navbar.Collapse>
-          <Nav>
-            <NavItem eventKey={1} href="#">About</NavItem>
-            <NavItem eventKey={2} href="#">Link</NavItem>
-          </Nav>
           <Nav pullRight>
             <NavItem eventKey={1} href="#">About</NavItem>
-            <NavItem eventKey={2} href="#">Link Right</NavItem>
+            <NavItem eventKey={2} href="#">Contact</NavItem>
           </Nav>
         </Navbar.Collapse>
       </Navbar>
