@@ -10,7 +10,7 @@ def test_api_root(client):
     assert response.status_code == 200
 
 
-@vcr.use_cassette(record_mode='new_episodes')
+@vcr.use_cassette(record_mode='once')
 def test_businesses_endpoint(client):
     response = client.get('/api/v1/businesses/')
     assert response.status_code == 200
