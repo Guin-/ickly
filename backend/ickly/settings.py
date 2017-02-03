@@ -31,7 +31,7 @@ ALLOWED_HOSTS = []
 # Webpack Loader Config
 
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, '../frontend'),
+    os.path.join(BASE_DIR, '../frontend/static/'),
 )
 
 WEBPACK_LOADER = {
