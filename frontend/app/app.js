@@ -1,16 +1,14 @@
-require('bootstrap/dist/css/bootstrap.min.css');
-require('bootstrap/dist/js/bootstrap.min.js');
-
 import React from 'react';
-import ReactDOM from 'react-dom';
-import HelloWorld from './components/helloWorld';
-import TitleHeader from './components/pageHeader';
+import Navigation from './components/nav';
+import Header from './components/header';
+import SearchForm from './components/searchform';
 
-ReactDOM.render(
-  <div className='app-container'>
-    <TitleHeader />
-    <HelloWorld />
-  </div>,
-  document.getElementById('react-app'))
+const App = () => (
+  <div>
+    <Navigation />
+    <Header />
+    <SearchForm />
+  </div>
+)
 
-module.hot.accept()
+export default App
