@@ -7,9 +7,7 @@ class About extends React.Component {
 
   render() {
     return (
-
       <div className="container">
-
         <div className="row">
           <div className="col-lg-12 text-center">
             <h1>About Ickly</h1>
@@ -20,7 +18,6 @@ class About extends React.Component {
                 </ul>
           </div>
         </div>
-
       </div>
     )
   }

@@ -1,5 +1,4 @@
 require('bootstrap/dist/css/bootstrap.min.css');
-require('bootstrap/dist/js/bootstrap.min.js');
 
 import React from 'react';
 import { render } from 'react-dom';

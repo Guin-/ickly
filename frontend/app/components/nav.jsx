@@ -1,5 +1,5 @@
 import React from 'react';
-import { Navbar, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap';
+import { Navbar, Nav, NavItem } from 'react-bootstrap';
 
 class Navigation extends React.Component {
   constructor(props) {
@@ -8,7 +8,6 @@ class Navigation extends React.Component {
 
   render() {
     return (
-
       <Navbar inverse fixedTop >
         <Navbar.Header>
           <Navbar.Brand>
