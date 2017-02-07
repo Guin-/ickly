@@ -15,7 +15,7 @@ class SearchForm extends React.Component {
     return (
         <div className="container">
           <AsyncTypeahead
-            labelKey={'dba'}
+            labelKey={(option) => option['dba'] + ' ' + option['address']}
             onSearch={ query => (
               fetch('http://localhost:8000/api/v1/businesses')
                 .then(resp => resp.json())
