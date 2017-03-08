@@ -6,7 +6,7 @@ class Business(models.Model):
     camis = models.CharField(max_length=255, primary_key=True)
     name = models.CharField(max_length=255)
     address = models.CharField(max_length=255)
-    phone = models.CharField(max_length=10)
+    phone = models.CharField(max_length=32)
     cuisine_description = models.CharField(max_length=255)
 
 class Inspection(models.Model):
@@ -47,3 +47,4 @@ class Inspection(models.Model):
     score = models.SmallIntegerField(null=True)
     grade = models.CharField(max_length=1, choices=GRADE_CHOICES)
     grade_date = models.DateField(null=True)
+
