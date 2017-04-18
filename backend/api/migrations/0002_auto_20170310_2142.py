@@ -4,29 +4,48 @@ from __future__ import unicode_literals
 
 from django.db import migrations, models
 import csv
+from datetime import datetime
 
 def load_initial_data(apps, schema_editor):
     Business = apps.get_model("api", "Business")
     Inspection = apps.get_model("api", "Inspection")
 
-    with open('../../../DOHMH_NYC_Restaurant_Inspection_Results.csv') as csv_file:
-        reader = csv.reader(csv_file, delimiter=',')
+    with open('DOHMH_NYC_Restaurant_Inspection_Results.csv') as csv_file:
+        reader = csv.reader(csv_file)
         header = next(reader)
+
+        businesses = []
+        inspections = []
+
         for row in reader:
-            Business.objects.bulk_create([
-                Business(camis=row[0], name=row[1],
-                         address=row[3] + ' ' + row[4] + ' ' + row[2] + ' ' + row[5],
-                         phone=row[6], cuisine_description=row[7])
-            ])
-            Inspection.objects.bulk_create([
-                    Inspection(business=row[0], record_date=row[16], inspection_date=row[8],
-                               inspection_type=row[17], action=row[9], violation_code=row[10],
-                               violation_description=row[11], critical_flag=row[12],
-                               score=row[13], grade=row[14], grade_date=row[15])
-            ])
+            camis = row[0]
+            business = next((b for b in businesses if b.camis == camis), None)
+            if not business:
+                business = Business(camis=row[0], name=row[1],
+                            address="{} {} {} {}".format(row[3], row[4], row[2], row[5]),
+                            phone=row[6], cuisine_description=row[7])
+                businesses.append(business)
+
+            inspection = Inspection(business=business,
+                                record_date=datetime.strptime(row[16],"%m/%d/%Y").date(),
+                                inspection_date=datetime.strptime(row[8],"%m/%d/%Y").date(),
+                                inspection_type=row[17], action=row[9], violation_code=row[10],
+                                violation_description=row[11], critical_flag=row[12],
+                                score=int(row[13]) if row[13] else None,
+                                grade=row[14],
+                                grade_date = datetime.strptime(row[15],"%m/%d/%Y").date() if row[15] else None)
+            inspections.append(inspection)
+
+        Business.objects.bulk_create(businesses)
+        Inspection.objects.bulk_create(inspections)
+
 
 def reverse_func(apps, schema_editor):
-    pass
+    Business = apps.get_model("api", "Business")
+    Inspection = apps.get_model("api", "Inspection")
+
+    Business.objects.all().delete()
+    Inspection.objects.all().delete()
 
 class Migration(migrations.Migration):
 
