@@ -1,7 +1,8 @@
 from rest_framework import serializers
+from models import Business
 
-class BusinessSerializer(serializers.Serializer):
-    camis = serializers.CharField()
-    dba = serializers.CharField(allow_blank=True)
-    address = serializers.CharField(allow_blank=True)
-    cuisine_description = serializers.CharField(allow_blank=True)
+class BusinessSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Business
+        fields = ('camis', 'name', 'address', 'phone', 'cuisine_description')
+

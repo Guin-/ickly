@@ -4,7 +4,7 @@ from django.db import models
 
 class Business(models.Model):
     camis = models.CharField(max_length=255, primary_key=True)
-    name = models.CharField(max_length=255)
+    name = models.CharField(max_length=255, db_index=True)
     address = models.CharField(max_length=255)
     phone = models.CharField(max_length=32)
     cuisine_description = models.CharField(max_length=255)
