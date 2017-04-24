@@ -9,7 +9,7 @@ module.exports = {
   entry: [
     'webpack-dev-server/client?http://localhost:3000',
     'webpack/hot/only-dev-server',
-    './frontend/app/app',
+    './frontend/app/index',
   ],
   // location of written bundled files
   output: {
