@@ -19,14 +19,13 @@ class SearchForm extends React.Component {
       .then(json => this.setState({options: json.results}))
   };
 
-
   render() {
     return (
         <div className="container">
           <div>
             <AsyncTypeahead
               placeholder="Search for a restaurant..."
-              labelKey={(option) => option['name'] + ' ' + option['address']}
+              labelKey={(option) => option['name']}
               onSearch={this.handleSearch.bind(this)}
               options={this.state.options}
             />
@@ -34,7 +33,6 @@ class SearchForm extends React.Component {
         </div>
     );
   }
-
 }
 
 export default SearchForm;
