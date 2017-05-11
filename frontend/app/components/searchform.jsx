@@ -1,21 +1,35 @@
 import React from 'react';
-import { Typeahead }  from 'react-bootstrap-typeahead';
+import { AsyncTypeahead }  from 'react-bootstrap-typeahead';
 
 class SearchForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-        data: ['these', 'will', 'be' ,'restaurants']
-    };
+        options: []
+        };
   }
+
+  handleSearch(query) {
+    if (!query) {
+      return;
+    }
+
+    fetch('/api/v1/businesses/?search=' + query)
+      .then(resp => resp.json())
+      .then(json => this.setState({options: json.results}))
+  };
 
   render() {
     return (
         <div className="container">
-          <Typeahead
-            placeholder='Restaurant name'
-            options={this.state.data}
-          />
+          <div>
+            <AsyncTypeahead
+              placeholder="Search for a restaurant..."
+              labelKey={(option) => option['name']}
+              onSearch={this.handleSearch.bind(this)}
+              options={this.state.options}
+            />
+          </div>
         </div>
     );
   }
