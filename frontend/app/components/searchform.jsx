@@ -14,7 +14,7 @@ class SearchForm extends React.Component {
       return;
     }
 
-    fetch('http://localhost:8000/api/v1/businesses/?search=' + query)
+    fetch('/api/v1/businesses/?search=' + query)
       .then(resp => resp.json())
       .then(json => this.setState({options: json.results}))
   };
