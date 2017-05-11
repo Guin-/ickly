@@ -15,6 +15,5 @@ PyYAML==3.12
 requests==2.7.0
 requests-mock==0.6.0
 six==1.9.0
-sodapy==1.4.0
 vcrpy==1.10.5
 wrapt==1.10.8
