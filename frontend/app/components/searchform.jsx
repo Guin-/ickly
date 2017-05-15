@@ -19,6 +19,15 @@ class SearchForm extends React.Component {
       .then(json => this.setState({options: json.results}))
   };
 
+  renderMenuItemChildren(option) {
+    return (
+      <div>
+        <strong>{option.name}</strong>
+        <p>{option.address}</p>
+      </div>
+    );
+  }
+
   render() {
     return (
         <div className="container">
@@ -28,6 +37,7 @@ class SearchForm extends React.Component {
               labelKey={(option) => option['name']}
               onSearch={this.handleSearch.bind(this)}
               options={this.state.options}
+              renderMenuItemChildren={this.renderMenuItemChildren.bind(this)}
             />
           </div>
         </div>
