@@ -24,11 +24,20 @@ module.exports = {
     new webpack.NoErrorsPlugin(),
   ],
 
+  externals: {
+    'cheerio': 'window',
+    'react/lib/ExecutionEnvironment': true,
+    'react/lib/ReactContext': true,
+  },
+
   module: {
     loaders: [
       { test: /\.jsx?$/,
         exclude: /node_modules/,
-        loaders: ['babel-loader'],
+        loader: 'babel-loader',
+        query: {
+          presets: ['react', 'es2015'],
+        },
       },
       { test: /\.scss$/,
         loaders: ['style', 'css', 'sass']
