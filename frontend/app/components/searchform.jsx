@@ -5,7 +5,8 @@ class SearchForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-        options: []
+        options: [],
+        selected: []
         };
   }
 
@@ -19,14 +20,20 @@ class SearchForm extends React.Component {
       .then(json => this.setState({options: json.results}))
   };
 
-  renderMenuItemChildren(option) {
+
+  renderMenuItemChildren(option, props, index) {
     return (
-      <div>
+      <div key={option.camis} onClick={(e) => this.handleTypeAheadResultClick(option)}>
         <strong>{option.name}</strong>
         <p>{option.address}</p>
       </div>
     );
   }
+ handleTypeAheadResultClick(option) {
+   fetch('/api/v1/businesses/' + option['camis'])
+    .then(resp => resp.json())
+    .then(json => this.setState({selected: json}))
+ }
 
   render() {
     return (
@@ -39,6 +46,12 @@ class SearchForm extends React.Component {
               options={this.state.options}
               renderMenuItemChildren={this.renderMenuItemChildren.bind(this)}
             />
+          </div>
+          <div>
+            <strong>{this.state.selected.name}</strong>
+            <p>{this.state.selected.address}</p>
+            <p>{this.state.selected.phone}</p>
+            <p>{this.state.selected.cuisine_description}</p>
           </div>
         </div>
     );
