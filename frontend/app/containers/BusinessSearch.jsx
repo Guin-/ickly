@@ -1,8 +1,9 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import SearchForm from '../components/searchform';
-import store from '../index';
-import { fetchBusiness, receiveBusinessDetail } from '../actions/';
+import Business from '../components/business';
+import { fetchBusiness } from '../actions/';
 
 class BusinessSearch extends React.Component {
   constructor(props) {
@@ -43,6 +44,7 @@ class BusinessSearch extends React.Component {
 
 
   render() {
+    const { item } = this.props
     return (
       <div className='container'>
         <SearchForm
@@ -50,21 +52,23 @@ class BusinessSearch extends React.Component {
           options={this.state.options}
           renderMenuItemChildren={this.renderMenuItemChildren.bind(this)}
         />
+        <Business item={item}/>
       </div>
     )
   }
 }
 
-function mapStateToProps(state) {
-  const { fetchBusiness, receiveBusinessDetail } = state
-  const { isFetching, item } =  fetchBusiness ||
-    { isFetching: true, item: []}
+const mapStateToProps = state => {
+  const { item } = state
   return {
-    item,
-    isFetching,
+    item
   }
 }
 
+BusinessSearch.propTypes = {
+  dispatch: PropTypes.func.isRequired,
+  handleTypeAheadResultClick: PropTypes.func,
+}
 
-export default connect()(BusinessSearch)
+export default connect(mapStateToProps)(BusinessSearch);
 

@@ -1,31 +1,18 @@
-import { combineReducers } from 'redux'
-import {
-  HAS_BUSINESS_SELECTION, REQUEST_BUSINESS_DETAIL, RECEIVE_BUSINESS_DETAIL
-} from '../actions/'
-
-
-function hasBusinessSelection(state = 'business', action) {
-  switch (action.type) {
-    case HAS_BUSINESS_SELECTION:
-      return action.business
-    default:
-      return state
-  }
-}
+import { REQUEST_BUSINESS_DETAIL, RECEIVE_BUSINESS_DETAIL } from '../actions/'
 
 function businessDetail(state = {
   isFetching: false,
-  item : {},
+  item : {}
 }, action) {
   switch (action.type) {
     case REQUEST_BUSINESS_DETAIL:
       return Object.assign({}, state, {
-        isFetching: true;
+        isFetching: true
     })
     case RECEIVE_BUSINESS_DETAIL:
       return Object.assign({}, state, {
-        isFetching: false;
-        items: action.businessDetail,
+        isFetching: false,
+        item: action.businessDetail,
         lastUpdated: action.receivedAt
     })
     default:
@@ -33,9 +20,4 @@ function businessDetail(state = {
   }
 }
 
-const rootReducer = combineReducers({
-  hasBusinessSelection,
-  businessDetail
-})
-
-export default rootReducer;
+export default businessDetail;

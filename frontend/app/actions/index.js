@@ -1,15 +1,5 @@
-export const HAS_BUSINESS_SELECTION = 'HAS_BUSINESS_SELECTION'
 export const REQUEST_BUSINESS_DETAIL = 'REQUEST_BUSINESS_DETAIL'
 export const RECEIVE_BUSINESS_DETAIL = 'RECEIVE_BUSINESS_DETAIL'
-
-
-export function hasBusinessSelection(business) {
-  return {
-    type: HAS_BUSINESS_SELECTION,
-    business
-  }
-}
-
 
 export function requestBusinessDetail(business) {
   return {
@@ -18,13 +8,21 @@ export function requestBusinessDetail(business) {
   }
 }
 
-
 export function receiveBusinessDetail(business, json) {
   return {
     type: RECEIVE_BUSINESS_DETAIL,
     business,
-    businessDetail: json.results
+    businessDetail: json,
     receivedAt: Date.now()
   }
 }
 
+export function fetchBusiness(business) {
+  return function (dispatch) {
+    dispatch(requestBusinessDetail(business))
+    return fetch('/api/v1/businesses/' + business['camis'])
+    .then(resp => resp.json())
+    .then(json =>
+      dispatch(receiveBusinessDetail(business, json)))
+  }
+ }

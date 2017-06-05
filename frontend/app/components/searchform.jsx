@@ -1,5 +1,6 @@
 import React from 'react';
 import { AsyncTypeahead }  from 'react-bootstrap-typeahead';
+import PropTypes from 'prop-types';
 
 class SearchForm extends React.Component {
   constructor(props) {
@@ -7,20 +8,27 @@ class SearchForm extends React.Component {
   }
 
   render() {
+    const { handleSearch, options, renderMenuItemChildren } = this.props
     return (
         <div className="container">
           <div>
             <AsyncTypeahead
               placeholder="Search for a restaurant..."
               labelKey={(option) => option['name']}
-              onSearch={this.props.handleSearch}
-              options={this.props.options}
-              renderMenuItemChildren={this.props.renderMenuItemChildren}
+              onSearch={handleSearch}
+              options={options}
+              renderMenuItemChildren={renderMenuItemChildren}
             />
           </div>
         </div>
     );
   }
+}
+
+SearchForm.propTypes = {
+  handleSearch: PropTypes.func.isRequired,
+  options: PropTypes.array,
+  renderMenuItemChildren: PropTypes.func.isRequired,
 }
 
 export default SearchForm;
