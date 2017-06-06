@@ -2,7 +2,7 @@ import { REQUEST_BUSINESS_DETAIL, RECEIVE_BUSINESS_DETAIL } from '../actions/'
 
 function businessDetail(state = {
   isFetching: false,
-  item : {}
+  selectedBusiness : {}
 }, action) {
   switch (action.type) {
     case REQUEST_BUSINESS_DETAIL:
@@ -12,8 +12,7 @@ function businessDetail(state = {
     case RECEIVE_BUSINESS_DETAIL:
       return Object.assign({}, state, {
         isFetching: false,
-        item: action.businessDetail,
-        lastUpdated: action.receivedAt
+        selectedBusiness: action.businessDetail
     })
     default:
       return state

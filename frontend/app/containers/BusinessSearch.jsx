@@ -44,7 +44,7 @@ class BusinessSearch extends React.Component {
 
 
   render() {
-    const { item } = this.props
+    const { selectedBusiness } = this.props
     return (
       <div className='container'>
         <SearchForm
@@ -52,16 +52,16 @@ class BusinessSearch extends React.Component {
           options={this.state.options}
           renderMenuItemChildren={this.renderMenuItemChildren.bind(this)}
         />
-        <Business item={item}/>
+        <Business selectedBusiness={selectedBusiness}/>
       </div>
     )
   }
 }
 
 const mapStateToProps = state => {
-  const { item } = state
+  const { selectedBusiness } = state
   return {
-    item
+    selectedBusiness
   }
 }
 

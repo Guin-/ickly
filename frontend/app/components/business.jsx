@@ -1,9 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types';
 
-const Business = ({item}) => (
+const Business = ({selectedBusiness}) => (
   <div>
-    <h1>{item.name}</h1>
+    <h1>{selectedBusiness.name}</h1>
   </div>
 )
 

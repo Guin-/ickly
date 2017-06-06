@@ -13,7 +13,6 @@ export function receiveBusinessDetail(business, json) {
     type: RECEIVE_BUSINESS_DETAIL,
     business,
     businessDetail: json,
-    receivedAt: Date.now()
   }
 }
 
