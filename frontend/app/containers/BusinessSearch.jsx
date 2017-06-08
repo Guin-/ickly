@@ -28,7 +28,7 @@ class BusinessSearch extends React.Component {
   };
 
 
-  renderMenuItemChildren(option, props, index) {
+  renderBusinessOptions(option, props, index) {
     return (
       <div key={option.camis} onClick={(e) => this.handleTypeAheadResultClick(option)}>
         <strong>{option.name}</strong>
@@ -50,7 +50,7 @@ class BusinessSearch extends React.Component {
         <SearchForm
           handleSearch={this.handleSearch.bind(this)}
           options={this.state.options}
-          renderMenuItemChildren={this.renderMenuItemChildren.bind(this)}
+          renderBusinessOptions={this.renderBusinessOptions.bind(this)}
         />
         <Business selectedBusiness={selectedBusiness}/>
       </div>

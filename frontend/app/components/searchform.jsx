@@ -8,7 +8,7 @@ class SearchForm extends React.Component {
   }
 
   render() {
-    const { handleSearch, options, renderMenuItemChildren } = this.props
+    const { handleSearch, options, renderBusinessOptions } = this.props
     return (
         <div className="container">
           <div>
@@ -17,7 +17,7 @@ class SearchForm extends React.Component {
               labelKey={(option) => option['name']}
               onSearch={handleSearch}
               options={options}
-              renderMenuItemChildren={renderMenuItemChildren}
+              renderMenuItemChildren={renderBusinessOptions}
             />
           </div>
         </div>
@@ -28,7 +28,7 @@ class SearchForm extends React.Component {
 SearchForm.propTypes = {
   handleSearch: PropTypes.func.isRequired,
   options: PropTypes.array,
-  renderMenuItemChildren: PropTypes.func.isRequired,
+  renderBusinessOptions: PropTypes.func.isRequired,
 }
 
 export default SearchForm;

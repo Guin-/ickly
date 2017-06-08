@@ -8,7 +8,7 @@ const Business = ({selectedBusiness}) => (
 )
 
 Business.propTypes = {
-  item: PropTypes.object.isRequired
+  selectedBusiness: PropTypes.object.isRequired
 }
 
 export default Business;
