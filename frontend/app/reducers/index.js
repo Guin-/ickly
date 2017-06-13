@@ -1,4 +1,4 @@
-import { REQUEST_BUSINESS_DETAIL, RECEIVE_BUSINESS_DETAIL } from '../actions/'
+import { REQUEST_BUSINESS_DETAIL, RECEIVE_BUSINESS_DETAIL, BUSINESS_DETAIL_FAILURE } from '../actions/'
 
 function businessDetail(state = {
   isFetching: false,
@@ -8,6 +8,11 @@ function businessDetail(state = {
     case REQUEST_BUSINESS_DETAIL:
       return Object.assign({}, state, {
         isFetching: true
+    })
+    case BUSINESS_DETAIL_FAILURE:
+      return Object.assign({}, state, {
+        isFetching: false,
+        error: error.message
     })
     case RECEIVE_BUSINESS_DETAIL:
       return Object.assign({}, state, {
