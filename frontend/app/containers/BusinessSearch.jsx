@@ -5,7 +5,7 @@ import SearchForm from '../components/searchform';
 import Business from '../components/business';
 import { fetchBusiness } from '../actions/';
 
-class BusinessSearch extends React.Component {
+export class BusinessSearch extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
