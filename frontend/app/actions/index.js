@@ -1,5 +1,8 @@
+import fetch from 'isomorphic-fetch'
+
 export const REQUEST_BUSINESS_DETAIL = 'REQUEST_BUSINESS_DETAIL'
 export const RECEIVE_BUSINESS_DETAIL = 'RECEIVE_BUSINESS_DETAIL'
+export const BUSINESS_DETAIL_FAILURE = 'BUSINESS_DETAIL_FAILURE'
 
 export function requestBusinessDetail(business) {
   return {
@@ -16,6 +19,13 @@ export function receiveBusinessDetail(business, json) {
   }
 }
 
+export function businessDetailFailure(err) {
+  return {
+    type: BUSINESS_DETAIL_FAILURE,
+    err
+  }
+}
+
 export function fetchBusiness(business) {
   return function (dispatch) {
     dispatch(requestBusinessDetail(business))
@@ -23,5 +33,6 @@ export function fetchBusiness(business) {
     .then(resp => resp.json())
     .then(json =>
       dispatch(receiveBusinessDetail(business, json)))
+    .catch(err => dispatch(businessDetailFailure(err)))
   }
  }
