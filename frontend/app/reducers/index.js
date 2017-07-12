@@ -1,20 +1,21 @@
-import { REQUEST_BUSINESS_DETAIL, RECEIVE_BUSINESS_DETAIL, BUSINESS_DETAIL_FAILURE } from '../actions/'
+import { BUSINESS_DETAIL_REQUEST, BUSINESS_DETAIL_SUCCESS, BUSINESS_DETAIL_FAILURE } from '../actions/'
 
 function businessDetail(state = {
   isFetching: false,
-  selectedBusiness : {}
+  selectedBusiness : {},
+  error: null
 }, action) {
   switch (action.type) {
-    case REQUEST_BUSINESS_DETAIL:
+    case BUSINESS_DETAIL_REQUEST:
       return Object.assign({}, state, {
         isFetching: true
     })
     case BUSINESS_DETAIL_FAILURE:
       return Object.assign({}, state, {
         isFetching: false,
-        error: error.message
+        error: action.error
     })
-    case RECEIVE_BUSINESS_DETAIL:
+    case BUSINESS_DETAIL_SUCCESS:
       return Object.assign({}, state, {
         isFetching: false,
         selectedBusiness: action.businessDetail
