@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import SearchForm from '../components/searchform';
 import Business from '../components/business';
-import { fetchBusiness } from '../actions/';
+import { fetchBusiness, resetError } from '../actions/';
 import { Alert } from 'react-bootstrap';
 
 class BusinessSearch extends React.Component {
@@ -48,11 +48,17 @@ class BusinessSearch extends React.Component {
     if (!errorMessage) {
       return null;
     }
+
     return (
-      <Alert bsStyle='danger'>
+      <Alert bsStyle='danger' onDismiss={this.handleAlertDismiss.bind(this)}>
         { errorMessage }
       </Alert>
     )
+  }
+
+  handleAlertDismiss() {
+    const { dispatch } = this.props
+    dispatch(resetError())
   }
 
   render() {

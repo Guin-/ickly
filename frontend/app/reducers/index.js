@@ -1,4 +1,4 @@
-import { BUSINESS_DETAIL_REQUEST, BUSINESS_DETAIL_SUCCESS, BUSINESS_DETAIL_FAILURE } from '../actions/'
+import { BUSINESS_DETAIL_REQUEST, BUSINESS_DETAIL_SUCCESS, BUSINESS_DETAIL_FAILURE, RESET_ERROR} from '../actions/'
 
 function businessDetail(state = {
   isFetching: false,
@@ -19,6 +19,10 @@ function businessDetail(state = {
       return Object.assign({}, state, {
         isFetching: false,
         selectedBusiness: action.businessDetail
+    })
+    case RESET_ERROR:
+      return Object.assign({}, state, {
+        error: null
     })
     default:
       return state

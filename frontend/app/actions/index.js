@@ -1,6 +1,7 @@
 export const BUSINESS_DETAIL_REQUEST = 'BUSINESS_DETAIL_REQUEST'
 export const BUSINESS_DETAIL_SUCCESS = 'BUSINESS_DETAIL_SUCCESS'
 export const BUSINESS_DETAIL_FAILURE = 'BUSINESS_DETAIL_FAILURE'
+export const RESET_ERROR = 'RESET_ERROR'
 
 export function businessDetailRequest(business) {
   return {
@@ -24,6 +25,12 @@ export function businessDetailFailure(error) {
   }
 }
 
+export function resetError() {
+  return {
+    type: RESET_ERROR
+  }
+}
+
 function handleErrors(response) {
   if (!response.ok) {
     throw Error(response.statusText)
@@ -34,9 +41,9 @@ function handleErrors(response) {
 export function fetchBusiness(business) {
   return function (dispatch) {
     dispatch(businessDetailRequest(business))
-    return fetch('/api/v1/businesses/' + business['camis'])
+    //return fetch('/api/v1/businesses/' + business['camis'])
     // uncomment following line to see how an error message displays in ui
-    //return fetch('api/v1/businesses/2')
+    return fetch('api/v1/businesses/2')
     .then(handleErrors)
     .then(response =>
          response.json().then(json => dispatch(businessDetailSuccess(business, json))))
