@@ -41,9 +41,7 @@ function handleErrors(response) {
 export function fetchBusiness(business) {
   return function (dispatch) {
     dispatch(businessDetailRequest(business))
-    //return fetch('/api/v1/businesses/' + business['camis'])
-    // uncomment following line to see how an error message displays in ui
-    return fetch('api/v1/businesses/2')
+    return fetch('/api/v1/businesses/' + business['camis'])
     .then(handleErrors)
     .then(response =>
          response.json().then(json => dispatch(businessDetailSuccess(business, json))))
