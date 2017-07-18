@@ -3,7 +3,8 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import SearchForm from '../components/searchform';
 import Business from '../components/business';
-import { fetchBusiness } from '../actions/';
+import { fetchBusiness, resetError } from '../actions/';
+import { Alert } from 'react-bootstrap';
 
 export class BusinessSearch extends React.Component {
   constructor(props) {
@@ -42,6 +43,23 @@ export class BusinessSearch extends React.Component {
     dispatch(fetchBusiness(option));
   }
 
+  renderErrorMessage() {
+    const { errorMessage } = this.props
+    if (!errorMessage) {
+      return null;
+    }
+
+    return (
+      <Alert bsStyle='danger' onDismiss={this.handleAlertDismiss.bind(this)}>
+        { errorMessage }
+      </Alert>
+    )
+  }
+
+  handleAlertDismiss() {
+    const { dispatch } = this.props
+    dispatch(resetError())
+  }
 
   render() {
     const { selectedBusiness } = this.props
@@ -53,17 +71,16 @@ export class BusinessSearch extends React.Component {
           renderBusinessOptions={this.renderBusinessOptions.bind(this)}
         />
         <Business selectedBusiness={selectedBusiness}/>
+        {this.renderErrorMessage()}
       </div>
     )
   }
 }
 
-const mapStateToProps = state => {
-  const { selectedBusiness } = state
-  return {
-    selectedBusiness
-  }
-}
+const mapStateToProps = (state) => ({
+  selectedBusiness: state.selectedBusiness,
+  errorMessage: state.error
+})
 
 BusinessSearch.propTypes = {
   dispatch: PropTypes.func.isRequired,
