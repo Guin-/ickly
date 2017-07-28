@@ -51,8 +51,10 @@
     "react-bootstrap": "^0.30.3",
     "react-bootstrap-typeahead": "^1.0.0-beta5",
     "react-dom": "15.5.4",
+    "react-number-format": "^2.0.2",
     "react-redux": "^4.4.8",
     "redux": "^3.6.0",
-    "redux-thunk": "^2.2.0"
+    "redux-thunk": "^2.2.0",
+    "styled-components": "^2.1.1"
   }
 }
