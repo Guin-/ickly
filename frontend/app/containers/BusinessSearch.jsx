@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import SearchForm from '../components/searchform';
 import Business from '../components/business';
-import { fetchBusiness, resetError } from '../actions/';
+import { fetchBusiness, resetError, fetchInspections } from '../actions/';
 import { Alert } from 'react-bootstrap';
 
 export class BusinessSearch extends React.Component {
@@ -40,8 +40,10 @@ export class BusinessSearch extends React.Component {
 
   handleTypeAheadResultClick(option) {
     const { dispatch } = this.props
-    dispatch(fetchBusiness(option));
+    dispatch(fetchBusiness(option))
+    dispatch(fetchInspections(option))
   }
+
 
   renderErrorMessage() {
     const { errorMessage } = this.props
@@ -62,7 +64,7 @@ export class BusinessSearch extends React.Component {
   }
 
   render() {
-    const { selectedBusiness } = this.props
+    const { business } = this.props
     return (
       <div className='container'>
         <SearchForm
@@ -70,7 +72,7 @@ export class BusinessSearch extends React.Component {
           options={this.state.options}
           renderBusinessOptions={this.renderBusinessOptions.bind(this)}
         />
-        <Business selectedBusiness={selectedBusiness}/>
+        <Business business={business}/>
         {this.renderErrorMessage()}
       </div>
     )
@@ -78,8 +80,9 @@ export class BusinessSearch extends React.Component {
 }
 
 const mapStateToProps = (state) => ({
-  selectedBusiness: state.selectedBusiness,
-  errorMessage: state.error
+  business: state.business.selectedBusiness,
+  errorMessage: state.business.error || state.inspections.error,
+  inspections: state.inspections.inspections.results
 })
 
 BusinessSearch.propTypes = {

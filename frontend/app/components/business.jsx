@@ -7,19 +7,19 @@ const Wrapper = styled.section`
   padding: 1em;
 `;
 
-const Business = ({selectedBusiness}) => (
+const Business = ({business}) => (
   <Wrapper>
     <div>
-      <h4>{selectedBusiness.name}</h4>
-      <NumberFormat value={selectedBusiness.phone} displayType={'text'} format="(###) ###-####"/>
-      <h5>{selectedBusiness.address}</h5>
-      <h5>{selectedBusiness.cuisine_description}</h5>
+      <h4>{business.name}</h4>
+      <NumberFormat value={business.phone} displayType={'text'} format="(###) ###-####"/>
+      <h5>{business.address}</h5>
+      <h5>{business.cuisine_description}</h5>
     </div>
   </Wrapper>
 )
 
 Business.propTypes = {
-  selectedBusiness: PropTypes.object.isRequired
+  business: PropTypes.object.isRequired
 }
 
 export default Business;

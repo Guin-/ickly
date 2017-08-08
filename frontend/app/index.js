@@ -6,15 +6,18 @@ import thunkMiddleware from 'redux-thunk'
 import { createStore, applyMiddleware } from 'redux'
 import { Provider } from 'react-redux'
 import fetchBusiness from './actions/index'
-import businessDetail from './reducers/index'
+import fetchInspections from './actions/index'
+import rootReducer from './reducers/index'
 import App from './app'
 
 const store = createStore(
-  businessDetail,
+  rootReducer,
   applyMiddleware(
     thunkMiddleware
   )
 )
+
+console.log(store.getState())
 
 render(
   <Provider store={store}>
