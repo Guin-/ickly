@@ -17,8 +17,6 @@ const store = createStore(
   )
 )
 
-console.log(store.getState())
-
 render(
   <Provider store={store}>
     <div className='app-container'>
