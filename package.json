@@ -49,6 +49,7 @@
     "prop-types": "^15.5.10",
     "react": "15.5.4",
     "react-bootstrap": "^0.30.3",
+    "react-bootstrap-table": "^4.0.1",
     "react-bootstrap-typeahead": "^1.0.0-beta5",
     "react-dom": "15.5.4",
     "react-number-format": "^2.0.2",
