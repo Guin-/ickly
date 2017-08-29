@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import SearchForm from '../components/searchform';
 import Business from '../components/business';
+import InspectionsList from '../components/inspectionsList';
 import { fetchBusiness, resetError, fetchInspections } from '../actions/';
 import { Alert } from 'react-bootstrap';
 
@@ -64,7 +65,7 @@ export class BusinessSearch extends React.Component {
   }
 
   render() {
-    const { business } = this.props
+    const { business, inspections } = this.props
     return (
       <div className='container'>
         <SearchForm
@@ -74,6 +75,7 @@ export class BusinessSearch extends React.Component {
         />
         <Business business={business}/>
         {this.renderErrorMessage()}
+        <InspectionsList inspections={inspections}/>
       </div>
     )
   }
