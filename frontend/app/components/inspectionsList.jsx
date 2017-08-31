@@ -3,6 +3,7 @@ import { BootstrapTable, TableHeaderColumn } from 'react-bootstrap-table';
 import PropTypes from 'prop-types';
 import { ListGroup, ListGroupItem, Panel } from 'react-bootstrap';
 
+/*
 class BSTable extends React.Component {
   render() {
     const { data } = this.props
@@ -17,6 +18,7 @@ class BSTable extends React.Component {
     }
   }
 }
+*/
 
 class InspectionsList extends React.Component {
   constructor(props) {
@@ -38,9 +40,18 @@ class InspectionsList extends React.Component {
           <ListGroupItem header="Action">
             {row['action']}
           </ListGroupItem>
-          <Panel header="Violation Description">
+          <ListGroupItem header="Violation Description">
             {row['violation_description']}
-          </Panel>
+          </ListGroupItem>
+          <ListGroupItem header="Violation Code">
+            {row['violation_code']}
+          </ListGroupItem>
+          <ListGroupItem header="Critical">
+            {row['critical_flag']}
+          </ListGroupItem>
+          <ListGroupItem header="Grade Date">
+            {row['grade_date'] || 'N/A'}
+          </ListGroupItem>
         </ListGroup>
       </div>
     )
@@ -56,13 +67,13 @@ class InspectionsList extends React.Component {
               <Panel header="Inspections">
               <BootstrapTable
                 data={inspections}
+                expandColumnOptions={ { expandColumnVisible: true } }
                 keyField='inspection_date'
                 expandableRow={this.isExpandableRow.bind(this)}
                 expandComponent={this.expandComponent.bind(this)}>
                   <TableHeaderColumn dataField='inspection_date'>Inspection Date </TableHeaderColumn>
-                  <TableHeaderColumn dataField='grade_date'>Grade Date</TableHeaderColumn>
-                  <TableHeaderColumn dataField='grade' dataAlign='right' width='20%'>Grade</TableHeaderColumn>
-                  <TableHeaderColumn dataField='score' dataAlign='right' width='20%'>Score</TableHeaderColumn>
+                  <TableHeaderColumn dataField='grade' dataAlign='right' width='25%'>Grade</TableHeaderColumn>
+                  <TableHeaderColumn dataField='score' dataAlign='right' width='25%'>Score</TableHeaderColumn>
               </BootstrapTable>
               </Panel>
               </div>
