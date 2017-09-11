@@ -3,22 +3,6 @@ import { BootstrapTable, TableHeaderColumn } from 'react-bootstrap-table';
 import PropTypes from 'prop-types';
 import { ListGroup, ListGroupItem, Panel } from 'react-bootstrap';
 
-/*
-class BSTable extends React.Component {
-  render() {
-    const { data } = this.props
-    if (this.props.data) {
-      return (
-        <BootstrapTable data={data} keyField='inspection_date'>
-          <TableHeaderColumn dataField='violation_description'>Violation Description</TableHeaderColumn>
-          <TableHeaderColumn dataField='inspection_date'>Inspection Date</TableHeaderColumn>
-        </BootstrapTable>);
-    } else {
-      return (<p>?</p>);
-    }
-  }
-}
-*/
 
 class InspectionsList extends React.Component {
   constructor(props) {
@@ -64,18 +48,16 @@ class InspectionsList extends React.Component {
           <div className="container">
             <div className="row">
               <div className="col-lg-12 col-xs-12">
-              <Panel header="Inspections">
               <BootstrapTable
                 data={inspections}
                 expandColumnOptions={ { expandColumnVisible: true } }
-                keyField='inspection_date'
+                keyField='id'
                 expandableRow={this.isExpandableRow.bind(this)}
                 expandComponent={this.expandComponent.bind(this)}>
                   <TableHeaderColumn dataField='inspection_date'>Inspection Date </TableHeaderColumn>
                   <TableHeaderColumn dataField='grade' dataAlign='right' width='25%'>Grade</TableHeaderColumn>
                   <TableHeaderColumn dataField='score' dataAlign='right' width='25%'>Score</TableHeaderColumn>
               </BootstrapTable>
-              </Panel>
               </div>
             </div>
           </div>
@@ -91,14 +73,3 @@ InspectionsList.propTypes = {
 
 export default InspectionsList;
 
-
-/*
-  expandComponent(row) {
-    const { inspections } = this.props
-    return (
-      <BootstrapTable keyField='violation_description' data={inspections}>
-        <TableHeaderColumn dataField='violation_description'> Violation Description</TableHeaderColumn>
-      </BootstrapTable>
-    )
-  }
-*/
