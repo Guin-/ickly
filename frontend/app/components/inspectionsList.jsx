@@ -25,10 +25,10 @@ class InspectionsList extends React.Component {
             {row['action']}
           </ListGroupItem>
           <ListGroupItem header="Violation Description">
-            {row['violation_description']}
+            {row['violation_description'] || 'N/A'}
           </ListGroupItem>
           <ListGroupItem header="Violation Code">
-            {row['violation_code']}
+            {row['violation_code'] || 'N/A'}
           </ListGroupItem>
           <ListGroupItem header="Critical">
             {row['critical_flag']}
@@ -47,18 +47,16 @@ class InspectionsList extends React.Component {
       return (
           <div className="container">
             <div className="row">
-              <div className="col-lg-12 col-xs-12">
               <BootstrapTable
                 data={inspections}
                 expandColumnOptions={ { expandColumnVisible: true } }
                 keyField='id'
                 expandableRow={this.isExpandableRow.bind(this)}
                 expandComponent={this.expandComponent.bind(this)}>
-                  <TableHeaderColumn dataField='inspection_date'>Inspection Date </TableHeaderColumn>
+                  <TableHeaderColumn dataField='inspection_date'>Date</TableHeaderColumn>
                   <TableHeaderColumn dataField='grade' dataAlign='right' width='25%'>Grade</TableHeaderColumn>
                   <TableHeaderColumn dataField='score' dataAlign='right' width='25%'>Score</TableHeaderColumn>
               </BootstrapTable>
-              </div>
             </div>
           </div>
       );
