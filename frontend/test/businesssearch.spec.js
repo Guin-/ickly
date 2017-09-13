@@ -12,7 +12,7 @@ describe('<BusinessSearch />', () => {
     const props = {
       handleTypeAheadResultClick : () => {},
       dispatch: () => {},
-      selectedBusiness: {}
+      business: {}
     }
     const wrapper = shallow(<BusinessSearch {...props} />)
     expect(wrapper.find(SearchForm)).to.have.length(1)
@@ -22,10 +22,10 @@ describe('<BusinessSearch />', () => {
 
   it('should render the selected business name when it exists', () => {
     const props = {
-      selectedBusiness: {name: 'restaurant'}
+      business: {name: 'restaurant'}
     }
     const wrapper = mount(<BusinessSearch {...props} />)
-    const businessName = wrapper.find('h1')
+    const businessName = wrapper.find('h4')
     expect(businessName.text()).to.equal('restaurant')
   });
 
