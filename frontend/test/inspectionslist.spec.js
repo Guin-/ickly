@@ -2,7 +2,7 @@ import React from 'react';
 import { expect } from 'chai';
 import { mount } from 'enzyme';
 import InspectionsList from '../app/components/inspectionsList';
-import { BootstrapTable, TableHeaderColumn, TableRow } from 'react-bootstrap-table';
+import { BootstrapTable, TableHeaderColumn } from 'react-bootstrap-table';
 
 
 describe('<InspectionsList />', () => {
