@@ -2,7 +2,12 @@ import React from 'react';
 import { BootstrapTable, TableHeaderColumn } from 'react-bootstrap-table';
 import PropTypes from 'prop-types';
 import { ListGroup, ListGroupItem } from 'react-bootstrap';
+import styled from 'styled-components'
 
+const StyledListGroupItem = styled(ListGroupItem)`
+  overflow-wrap: break-word;
+  white-space: normal;
+`
 
 class InspectionsList extends React.Component {
   constructor(props) {
@@ -16,26 +21,26 @@ class InspectionsList extends React.Component {
 
   expandComponent(row) {
     return (
-      <div>
+      <div className="col-lg-12">
         <ListGroup>
-          <ListGroupItem header="Inspection Type">
-             {row['inspection_type']}
-          </ListGroupItem>
-          <ListGroupItem header="Action">
+          <StyledListGroupItem header="Inspection Type">
+            {row['inspection_type']}
+          </StyledListGroupItem>
+          <StyledListGroupItem header="Action">
             {row['action']}
-          </ListGroupItem>
-          <ListGroupItem header="Violation Description">
+          </StyledListGroupItem>
+          <StyledListGroupItem header="Violation Description">
             {row['violation_description'] || 'N/A'}
-          </ListGroupItem>
-          <ListGroupItem header="Violation Code">
+          </StyledListGroupItem>
+          <StyledListGroupItem header="Violation Code">
             {row['violation_code'] || 'N/A'}
-          </ListGroupItem>
-          <ListGroupItem header="Critical">
+          </StyledListGroupItem>
+          <StyledListGroupItem header="Critical">
             {row['critical_flag']}
-          </ListGroupItem>
-          <ListGroupItem header="Grade Date">
+          </StyledListGroupItem>
+          <StyledListGroupItem header="Grade Date">
             {row['grade_date'] || 'N/A'}
-          </ListGroupItem>
+          </StyledListGroupItem>
         </ListGroup>
       </div>
     )

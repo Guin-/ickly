@@ -11,7 +11,7 @@ const Business = ({business}) => (
   <Wrapper>
     <div>
       <h4>{business.name}</h4>
-      <NumberFormat value={business.phone} displayType={'text'} format="(###) ###-####"/>
+      <h5><NumberFormat value={business.phone} displayType={'text'} format="(###) ###-####"/></h5>
       <h5>{business.address}</h5>
       <h5>{business.cuisine_description}</h5>
     </div>
