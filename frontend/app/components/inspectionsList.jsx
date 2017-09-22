@@ -24,10 +24,10 @@ class InspectionsList extends React.Component {
       <div className="col-lg-12">
         <ListGroup>
           <StyledListGroupItem header="Inspection Type">
-             {row['inspection_type']}
+            {row['inspection_type']}
           </StyledListGroupItem>
           <StyledListGroupItem header="Action">
-              {row['action']}
+            {row['action']}
           </StyledListGroupItem>
           <StyledListGroupItem header="Violation Description">
             {row['violation_description'] || 'N/A'}
