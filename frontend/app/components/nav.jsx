@@ -12,7 +12,9 @@ class Navigation extends React.Component {
       <Navbar inverse fixedTop collapseOnSelect>
         <Navbar.Header>
           <Navbar.Brand>
-            <a href="/">Ickly</a>
+            <LinkContainer to="/">
+              <a href="#">Ickly</a>
+            </LinkContainer>
           </Navbar.Brand>
           <Navbar.Toggle />
         </Navbar.Header>
