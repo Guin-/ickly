@@ -1,13 +1,11 @@
 import React from 'react';
 import Navigation from './components/nav';
-import Header from './components/header';
-import BusinessSearch from './containers/businessSearch';
+import MainRouter from './components/mainRouter';
 
 const App = () => (
   <div>
+    <MainRouter />
     <Navigation />
-    <Header />
-    <BusinessSearch />
   </div>
 )
 
