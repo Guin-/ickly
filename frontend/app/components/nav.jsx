@@ -9,7 +9,7 @@ class Navigation extends React.Component {
 
   render() {
     return (
-      <Navbar inverse fixedTop >
+      <Navbar inverse fixedTop collapseOnSelect>
         <Navbar.Header>
           <Navbar.Brand>
             <a href="/">Ickly</a>
