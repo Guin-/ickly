@@ -1,3 +1,4 @@
+import { isEqual, union, groupBy, merge } from 'lodash';
 export const BUSINESS_DETAIL_REQUEST = 'BUSINESS_DETAIL_REQUEST'
 export const BUSINESS_DETAIL_SUCCESS = 'BUSINESS_DETAIL_SUCCESS'
 export const BUSINESS_DETAIL_FAILURE = 'BUSINESS_DETAIL_FAILURE'
@@ -37,11 +38,11 @@ export function inspectionsRequest(business) {
 }
 
 
-export function inspectionsSuccess(business, json) {
+export function inspectionsSuccess(business, result) {
   return {
     type: INSPECTIONS_SUCCESS,
     business,
-    inspectionsList: json
+    inspectionsList: result
   }
 }
 
@@ -67,6 +68,46 @@ function handleErrors(response) {
   return response
 }
 
+/*
+  let result = _(json.results)
+                .groupBy('inspection_date')
+                .map(function(group) {
+                  return _.mergeWith.apply(_, [{}].concat(group, function(obj, src) {
+                // merge all items, and if a property is a string concat the content
+                  if (_.isString(obj)) {
+                    let merged = obj.concat(src)
+                     return merged
+                    }
+                  }))
+                })
+                .values()
+                .value()
+*/
+
+
+/*
+  let result = _(json.results)
+                .groupBy('inspection_date')
+                .map(_.spread(_.assign))
+                .value();
+*/
+
+function dedupeDates(json) {
+  let result = _(json.results)
+                .groupBy('inspection_date')
+                .map(objs => _.assignWith({}, ...objs, function(val1, val2) {
+                      console.log(val1, val2)
+                      if(val1 && val1 != val2) {
+                        return val1 + ' , ' + val2
+                       }
+                    })
+                  )
+                .value()
+  console.log(result)
+  return result
+}
+
+
 export function fetchBusiness(business) {
   return function (dispatch) {
     dispatch(businessDetailRequest(business))
@@ -84,7 +125,8 @@ export function fetchBusiness(business) {
     return fetch('/api/v1/businesses/' + business['camis'] + '/inspections/')
     .then(handleErrors)
     .then(response =>
-         response.json().then(json => dispatch(inspectionsSuccess(business, json))))
+         response.json().then(json => dedupeDates(json)))
+    .then(result => dispatch(inspectionsSuccess(business, result)))
     .catch(error => dispatch(inspectionsFailure(error)))
   }
  }
