@@ -48,7 +48,7 @@ class InspectionsList extends React.Component {
 
   render() {
     const { inspections } = this.props
-    if (this.props.inspections) {
+    if (this.props.inspections.length > 0) {
       return (
           <div className="container">
             <div className="row">

@@ -1,3 +1,4 @@
+import { groupBy, assignWith } from 'lodash';
 export const BUSINESS_DETAIL_REQUEST = 'BUSINESS_DETAIL_REQUEST'
 export const BUSINESS_DETAIL_SUCCESS = 'BUSINESS_DETAIL_SUCCESS'
 export const BUSINESS_DETAIL_FAILURE = 'BUSINESS_DETAIL_FAILURE'
@@ -36,15 +37,13 @@ export function inspectionsRequest(business) {
   }
 }
 
-
-export function inspectionsSuccess(business, json) {
+export function inspectionsSuccess(business, result) {
   return {
     type: INSPECTIONS_SUCCESS,
     business,
-    inspectionsList: json
+    inspectionsList: result
   }
 }
-
 
 export function inspectionsFailure(error) {
   return {
@@ -52,7 +51,6 @@ export function inspectionsFailure(error) {
     error: error.message || 'Something went wrong'
   }
 }
-
 
 export function resetError() {
   return {
@@ -65,6 +63,19 @@ function handleErrors(response) {
     throw Error(response.statusText)
   }
   return response
+}
+
+function dedupeDates(json) {
+  let result = _(json.results)
+                .groupBy('inspection_date')
+                .map(objs => _.assignWith({}, ...objs, function(val1, val2) {
+                      if(val1 && val1 != val2) {
+                        return [].concat(val1, ', ', val2)
+                       }
+                    })
+                  )
+                .value()
+  return result
 }
 
 export function fetchBusiness(business) {
@@ -84,7 +95,8 @@ export function fetchBusiness(business) {
     return fetch('/api/v1/businesses/' + business['camis'] + '/inspections/')
     .then(handleErrors)
     .then(response =>
-         response.json().then(json => dispatch(inspectionsSuccess(business, json))))
+         response.json().then(json => dedupeDates(json)))
+    .then(result => dispatch(inspectionsSuccess(business, result)))
     .catch(error => dispatch(inspectionsFailure(error)))
   }
  }

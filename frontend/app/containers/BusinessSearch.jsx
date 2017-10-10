@@ -84,7 +84,7 @@ export class BusinessSearch extends React.Component {
 const mapStateToProps = (state) => ({
   business: state.business.selectedBusiness,
   errorMessage: state.business.error || state.inspections.error,
-  inspections: state.inspections.inspections.results
+  inspections: state.inspections.inspections
 })
 
 BusinessSearch.propTypes = {
