@@ -74,6 +74,8 @@ function dedupeDates(json) {
                        }
                     })
                   )
+                .sortBy('inspection_date')
+                .reverse()
                 .value()
   return result
 }

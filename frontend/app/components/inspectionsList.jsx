@@ -46,16 +46,6 @@ class InspectionsList extends React.Component {
     )
   }
 
-  sortByDate(a, b) {
-    // a is not a string
-    // call sort on the array first
-    // then pass those results to your current sortbydate function
-    return a
-//    a = a.split("-").join('');
-    b = b.split('-').join('');
-//    return a > b ? 1 : a < b ? -1 : 0;
-  }
-
   render() {
     const { inspections } = this.props
     if (this.props.inspections.length > 0) {
@@ -68,11 +58,7 @@ class InspectionsList extends React.Component {
                 keyField='id'
                 expandableRow={this.isExpandableRow.bind(this)}
                 expandComponent={this.expandComponent.bind(this)}>
-                  <TableHeaderColumn dataField='inspection_date'
-                                     dataSort
-                                     sortFunc={ this.sortByDate.bind(this) }>
-                    Date
-                  </TableHeaderColumn>
+                  <TableHeaderColumn dataField='inspection_date'>Date</TableHeaderColumn>
                   <TableHeaderColumn dataField='grade' dataAlign='right' width='25%'>Grade</TableHeaderColumn>
                   <TableHeaderColumn dataField='score' dataAlign='right' width='25%'>Score</TableHeaderColumn>
               </BootstrapTable>
