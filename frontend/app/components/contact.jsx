@@ -1,4 +1,8 @@
 import React from 'react';
+import Github from '../../static/Github.png'
+import mail from '../../static/mail.png'
+import '../styles/styles.css'
+
 
 class Contact extends React.Component {
   constructor(props) {
@@ -9,12 +13,12 @@ class Contact extends React.Component {
     return (
       <div className="container">
         <div className="row">
-          <div className="col-lg-12 text-center">
-            <h1>Contact</h1>
-                <ul className="list-unstyled">
-                  <li>things</li>
-                  <li>stuff</li>
-                </ul>
+          <div className="col-lg-8 col-lg-offset-2 text-center">
+            <h2>Contact</h2>
+               <div>
+                    <a href="https://github.com/Guin-/"><img className="icon-img"src={Github}/></a>
+                    <a href="mailto:angelikajarosz@gmail.com"><img className="icon-img"src={mail}/></a>
+               </div>
           </div>
         </div>
       </div>
@@ -23,3 +27,4 @@ class Contact extends React.Component {
 }
 
 export default Contact;
+
