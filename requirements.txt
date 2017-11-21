@@ -1,10 +1,13 @@
 contextlib2==0.5.4
+dj-database-url==0.4.2
 Django==1.10.1
+django-crispy-forms==1.6.1
+django-filter==1.0.1
 django-webpack-loader==0.3.3
-django-filter==1.0.2
 djangorestframework==3.4.6
 funcsigs==1.0.2
 future==0.15.0
+gunicorn==19.7.1
 mock==2.0.0
 pbr==1.10.0
 psycopg2==2.6.2
@@ -16,4 +19,5 @@ requests==2.7.0
 requests-mock==0.6.0
 six==1.9.0
 vcrpy==1.10.5
+whitenoise==3.3.1
 wrapt==1.10.8
