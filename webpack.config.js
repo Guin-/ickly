@@ -6,22 +6,15 @@ module.exports = {
   context: __dirname,
 
   // app import chain starts here
-  entry: [
-    'webpack-dev-server/client?http://localhost:3000',
-    'webpack/hot/only-dev-server',
-    './frontend/app/index',
-  ],
+  entry: './frontend/app/index',
+
   // location of written bundled files
   output: {
     path: path.resolve('./frontend/bundles/'),
-    filename: '[name]-[hash].js',
-    publicPath: 'http://localhost:3000/static/bundles/',
+    filename: '[name]-[hash].js'
   },
 
   plugins: [
-    new webpack.HotModuleReplacementPlugin(),
-    new BundleTracker({path: __dirname, filename: './webpack-stats.json'}),
-    new webpack.NoErrorsPlugin(),
   ],
 
   externals: {
