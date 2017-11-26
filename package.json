@@ -6,7 +6,8 @@
   "scripts": {
     "test": "mocha --require babel-register  frontend/test/helpers/browser.js frontend/test/*.spec.js",
     "start": "node server.js",
-    "build-production": "webpack --config webpack.prod.config.js"
+    "build-production": "webpack --config webpack.prod.config.js",
+    "heroku-postbuild": "npm run build-production"
   },
   "repository": {
     "type": "git",
