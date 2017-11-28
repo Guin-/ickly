@@ -11,28 +11,31 @@ https://docs.djangoproject.com/en/1.10/ref/settings/
 """
 
 import os
-from ickly import secret_settings
+from django.core.exceptions import ImproperlyConfigured
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.10/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = secret_settings.SECRET_KEY
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+def get_env_variable(var_name):
+    """Get the environment variable or return exception"""
+    try:
+        return os.environ[var_name]
+    except keyError:
+        error_msg = "Set the {} environment variable".format(var_name)
+        raise ImproperlyConfigured(error_msg)
+
+
+# SECURITY WARNING: keep the secret key used in production secret!
+SECRET_KEY = get_env_variable('SECRET_KEY')
+
 
 ALLOWED_HOSTS = []
 
 # Webpack Loader Config
-
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, '../frontend/static/'),
-)
-
 WEBPACK_LOADER = {
     'DEFAULT': {
         'BUNDLE_DIR_NAME': 'bundles/',
@@ -40,11 +43,9 @@ WEBPACK_LOADER = {
     }
 }
 
-if not DEBUG:
-    WEBPACK_LOADER['DEFAULT'].update({
-        'BUNDLE_DIR_NAME': 'dist/',
-        'STATS_FILE': os.path.join(BASE_DIR, '../webpack-stats-prod.json')
-    })
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, '../frontend/static/'),
+)
 
 
 # Application definition
@@ -102,8 +103,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'ickly',
-        'USER': secret_settings.USER,
-        'PASSWORD': secret_settings.PASSWORD,
+        'USER': get_env_variable('USER'),
+        'PASSWORD': get_env_variable('PASSWORD'),
         'HOST': 'localhost',
         'PORT': '',
     }
