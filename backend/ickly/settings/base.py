@@ -43,6 +43,8 @@ WEBPACK_LOADER = {
     }
 }
 
+STATIC_ROOT = os.path.join(BASE_DIR, '../frontend/')
+
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, '../frontend/static/'),
 )
