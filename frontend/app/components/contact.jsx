@@ -1,5 +1,5 @@
 import React from 'react';
-import Github from '../../static/Github.png'
+import Github from '../../static/GitHub.png'
 import mail from '../../static/mail.png'
 import '../styles/styles.css'
 
