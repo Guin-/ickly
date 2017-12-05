@@ -43,9 +43,10 @@ WEBPACK_LOADER = {
     }
 }
 
-STATIC_ROOT = os.path.join(BASE_DIR, '../frontend/')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, '../frontend/'),
     os.path.join(BASE_DIR, '../frontend/static/'),
 )
 
@@ -58,6 +59,7 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'whitenoise.runserver_nostatic',
     'django.contrib.staticfiles',
 
     'webpack_loader',

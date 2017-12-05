@@ -12,7 +12,6 @@ var config = require('./webpack.config.js')
   ]
 
   // override django's STATIC_URL for webpack bundles
-  // location of written bundled files
   config.output.publicPath = 'http://localhost:3000/static/bundles/'
 
   config.plugins =  [
