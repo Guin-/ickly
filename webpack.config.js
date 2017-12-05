@@ -45,7 +45,7 @@ module.exports = {
   },
 
   resolve: {
-    modulesDirectories: ['node_modules'],
+    modulesDirectories: ['node_modules' , path.resolve(__dirname, 'frontend')],
     extensions: ['', '.js', '.jsx']
   },
 }

@@ -6,7 +6,7 @@
   "scripts": {
     "test": "mocha --require babel-register  frontend/test/helpers/browser.js frontend/test/*.spec.js",
     "watch": "node server.js",
-    "build-production": "webpack --config webpack.prod.config.js",
+    "build-production": "webpack --config webpack.prod.config.js --display-error-details",
     "postinstall": "npm run build-production"
   },
   "repository": {
