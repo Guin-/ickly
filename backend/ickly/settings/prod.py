@@ -2,7 +2,7 @@ from .base import *
 
 DEBUG = False
 
-ALLOWED_HOSTS = ['.ickly.herokuapp.com/',]
+ALLOWED_HOSTS = ['*']
 
 WEBPACK_LOADER['DEFAULT'].update({
     'BUNDLE_DIR_NAME': 'dist/',
