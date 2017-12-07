@@ -1,1 +1,1 @@
-web: gunicorn --pythonpath backend ickly.wsgi --log-file -
+web: cd backend; gunicorn ickly.wsgi --log-file -
