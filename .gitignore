@@ -95,7 +95,7 @@ secret_settings.py
 node_modules/
 
 frontend/bundles/
-frontend/dist/
+frontend/output/dist/
 
 webpack-stats-prod.json
 webpack-stats.json
