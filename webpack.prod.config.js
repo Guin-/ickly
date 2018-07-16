@@ -5,7 +5,7 @@ var BundleTracker = require('webpack-bundle-tracker')
 var config = require('./webpack.config.js')
 
   // location of written bundled files
-  config.output.path = path.resolve('./frontend/dist/')
+  config.output.path = path.resolve('./frontend/output/dist/')
 
   config.plugins =  [
     new BundleTracker({path: __dirname, filename: './webpack-stats-prod.json'}),

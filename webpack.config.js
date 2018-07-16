@@ -38,14 +38,23 @@ module.exports = {
       { test: /\.css$/,
         loaders: ['style', 'css']
       },
-      { test: /\.(png|jpg|jpeg|gif|svg|woff|woff2|ttf|eot)$/,
-        loader: 'file'
+      { test: /\.(png|jpg|jpeg)$/,
+        loader: 'url-loader',
+        options: {
+          name: '[name]-[ext]'
+        }
+      },
+      { test: /\.(svg|woff|woff2|ttf|eot)$/,
+        loader: 'file',
+        options: {
+          publicPath: 'static/images/'
+          }
       }
     ]
   },
 
   resolve: {
-    modulesDirectories: ['node_modules'],
+    modulesDirectories: ['node_modules' , path.resolve(__dirname, 'frontend')],
     extensions: ['', '.js', '.jsx']
   },
 }

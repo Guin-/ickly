@@ -33,7 +33,7 @@ def test_businesses_endpoint_detail_response(client):
 @pytest.mark.django_db
 def test_business_inspection_edge_endpoint_response(client):
     response = client.get('/api/v1/businesses/40394054/inspections/')
-    expected_keys = ['business', 'record_date', 'inspection_date', 'inspection_type',
+    expected_keys = ['id', 'business', 'record_date', 'inspection_date', 'inspection_type',
                      'action', 'violation_code', 'violation_description', 'critical_flag',
                      'score', 'grade', 'grade_date']
     assert response.status_code == 200
