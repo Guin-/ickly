@@ -4,8 +4,8 @@ import MainRouter from './components/mainRouter';
 
 const App = () => (
   <div>
-    <MainRouter />
     <Navigation />
+    <MainRouter />
   </div>
 )
 

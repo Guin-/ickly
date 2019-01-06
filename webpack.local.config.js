@@ -4,6 +4,8 @@ var BundleTracker = require('webpack-bundle-tracker')
 
 var config = require('./webpack.config.js')
 
+  config.mode = 'development'
+
   // use the webpack dev server
   config.entry = [
     'webpack-dev-server/client?http://localhost:3000',
@@ -17,7 +19,6 @@ var config = require('./webpack.config.js')
   config.plugins =  [
     new webpack.HotModuleReplacementPlugin(),
     new BundleTracker({path: __dirname, filename: './webpack-stats.json'}),
-    new webpack.NoErrorsPlugin(),
   ]
 
 module.exports = config

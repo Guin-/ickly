@@ -24,37 +24,54 @@ module.exports = {
   },
 
   module: {
-    loaders: [
+    rules: [
       { test: /\.jsx?$/,
         exclude: /node_modules/,
-        loader: 'babel-loader',
-        query: {
-          presets: ['react', 'es2015'],
-        },
-      },
-      { test: /\.scss$/,
-        loaders: ['style', 'css', 'sass']
-      },
-      { test: /\.css$/,
-        loaders: ['style', 'css']
-      },
-      { test: /\.(png|jpg|jpeg)$/,
-        loader: 'url-loader',
-        options: {
-          name: '[name]-[ext]'
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env', '@babel/preset-react']
+          }
         }
       },
+      { test: /\.scss$/,
+        use: [
+          'style-loader',
+          'css-loader',
+          'sass-loader',
+        ]
+      },
+      { test: /\.css$/,
+        use: [
+          'style-loader',
+          'css-loader',
+        ]
+      },
+      { test: /\.(png|jpg|jpeg)$/,
+        use: [
+           {
+            loader: 'url-loader',
+            options: {
+              name: '[name]-[ext]'
+            }
+           }
+        ]
+      },
       { test: /\.(svg|woff|woff2|ttf|eot)$/,
-        loader: 'file',
-        options: {
-          publicPath: 'static/images/'
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              publicPath: 'static/images/'
+            }
           }
+        ]
       }
     ]
   },
 
   resolve: {
-    modulesDirectories: ['node_modules' , path.resolve(__dirname, 'frontend')],
-    extensions: ['', '.js', '.jsx']
+    modules: ['node_modules' , path.resolve(__dirname, 'frontend')],
+    extensions: ['.js', '.jsx']
   },
 }

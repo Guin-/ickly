@@ -4,6 +4,7 @@ var config = require('./webpack.local.config')
 
 new WebpackDevServer(webpack(config), {
   publicPath: config.output.publicPath,
+  headers: { 'Access-Control-Allow-Origin': 'http://localhost:8000' },
   hot: true,
   inline: true,
   historyApiFallback: true,
