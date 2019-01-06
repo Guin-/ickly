@@ -1,14 +1,12 @@
-require('bootstrap/dist/css/bootstrap.min.css');
-
+import 'bootstrap/dist/css/bootstrap.min.css'
 import '../../node_modules/react-bootstrap-table/dist/react-bootstrap-table-all.min.css';
+import '../app/styles/styles.css'
 import React from 'react'
 import { render } from 'react-dom'
 import thunkMiddleware from 'redux-thunk'
 import { createStore, applyMiddleware } from 'redux'
 import { Provider } from 'react-redux'
 import { BrowserRouter as Router } from 'react-router-dom'
-import fetchBusiness from './actions/index'
-import fetchInspections from './actions/index'
 import rootReducer from './reducers/index'
 import App from './app'
 
