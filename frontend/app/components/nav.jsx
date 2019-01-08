@@ -6,7 +6,8 @@ import { Navbar,
          Nav,
          NavItem,
          NavLink,
-         Collapse } from 'reactstrap'
+         Collapse,
+         Container } from 'reactstrap'
 
 
 class Navigation extends React.Component {
@@ -27,7 +28,8 @@ class Navigation extends React.Component {
 
   render() {
     return (
-        <Navbar color="faded" light fixed="true" expand="md">
+        <Navbar className="navbar-custom" color="transparent" light fixed="true" expand="md">
+          <Container>
           <NavbarBrand tag={Link} to="/" >Ickly</NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
@@ -40,6 +42,7 @@ class Navigation extends React.Component {
               </NavItem>
             </Nav>
           </Collapse>
+          </Container>
         </Navbar>
     )
   }
