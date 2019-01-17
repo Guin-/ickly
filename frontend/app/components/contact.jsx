@@ -2,7 +2,7 @@ import React from 'react';
 import Github from '../../static/images/GitHub.png'
 import mail from '../../static/images/mail.png'
 import '../styles/styles.css'
-
+import Navigation from './nav';
 
 class Contact extends React.Component {
   constructor(props) {
@@ -12,6 +12,7 @@ class Contact extends React.Component {
   render() {
     return (
       <div className="container">
+      <Navigation />
         <div className="row">
           <div className="col-lg-8 col-lg-offset-2 text-center">
             <h2>Contact</h2>

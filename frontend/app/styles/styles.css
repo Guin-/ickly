@@ -24,6 +24,29 @@
     color: white;;
 }
 
+/*
+  Home/Business Search
+*/
+
+.hero-wrapper {
+    display: block;
+    height: 100vh;
+    background-color: darkred;
+}
+
+.ickly-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 70vh;
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+    .ickly-header {
+        height: 50vh;
+    }
+}
+
 .icon-img {
     margin: 20px;
 }
