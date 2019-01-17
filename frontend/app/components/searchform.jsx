@@ -8,11 +8,12 @@ class SearchForm extends React.Component {
   }
 
   render() {
-    const { handleSearch, options, renderBusinessOptions } = this.props
+    const { handleSearch, options, isLoading, renderBusinessOptions } = this.props
     return (
           <div className='col-lg-12 col-lg-offset-0 col-xs-10 col-xs-offset-1'>
             <AsyncTypeahead
               placeholder="Search for a restaurant..."
+              isLoading={isLoading}
               labelKey={(option) => option['name']}
               onSearch={handleSearch}
               options={options}
