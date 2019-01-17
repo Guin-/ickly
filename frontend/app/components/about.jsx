@@ -1,5 +1,6 @@
 import React from 'react';
 import { Grid, Row, Col } from 'react-bootstrap'
+import Navigation from './nav';
 
 
 class About extends React.Component {
@@ -10,6 +11,7 @@ class About extends React.Component {
   render() {
     return (
       <Grid>
+      <Navigation />
         <Row>
           <Col lg={8} lgOffset={2} md={8} mdOffset={2} xs={10} xsOffset={1} className="text-center">
             <h2>About Ickly</h2>
