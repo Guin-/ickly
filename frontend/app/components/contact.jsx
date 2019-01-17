@@ -1,7 +1,6 @@
 import React from 'react';
 import Github from '../../static/images/GitHub.png'
 import mail from '../../static/images/mail.png'
-import '../styles/styles.css'
 import Navigation from './nav';
 
 class Contact extends React.Component {

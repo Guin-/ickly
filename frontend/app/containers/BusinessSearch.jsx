@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import SearchForm from '../components/searchform';
 import Business from '../components/business';
@@ -8,26 +7,33 @@ import Navigation from '../components/nav';
 import InspectionsList from '../components/inspectionsList';
 import { fetchBusiness, resetError, fetchInspections } from '../actions/';
 import { Alert } from 'react-bootstrap';
+import 'react-bootstrap-typeahead/css/Typeahead.css';
+import 'react-bootstrap-typeahead/css/Typeahead-bs4.css';
 
 export class BusinessSearch extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       searchQuery: '',
-      options: []
+      options: [],
+      isLoading: false,
     };
 
     this.handleTypeAheadResultClick = this.handleTypeAheadResultClick.bind(this)
   }
 
   handleSearch(query) {
+    this.setState({isLoading: true})
     if (!query) {
       return;
     }
 
     fetch('/api/v1/businesses/?search=' + query)
       .then(resp => resp.json())
-      .then(json => this.setState({options: json.results, searchQuery: query}))
+      .then(json => this.setState({
+                      options: json.results,
+                      searchQuery: query,
+                      isLoading: false}))
       .catch(err => console.error('Business Search: handleSearch failed', err))
   };
 
@@ -78,6 +84,7 @@ export class BusinessSearch extends React.Component {
                 <SearchForm
                   handleSearch={this.handleSearch.bind(this)}
                   options={this.state.options}
+                  isLoading={this.state.isLoading}
                   renderBusinessOptions={this.renderBusinessOptions.bind(this)}
                 />
               </div>
