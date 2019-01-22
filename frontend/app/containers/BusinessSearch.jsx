@@ -90,6 +90,9 @@ export class BusinessSearch extends React.Component {
               </div>
             </div>
           </section>
+          <section>
+            <Business business={business}/>
+          </section>
       </div>
     )
   }
