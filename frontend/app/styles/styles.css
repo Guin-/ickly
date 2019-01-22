@@ -5,23 +5,28 @@
 /* change the background color */
 .navbar-custom {
     background-color: rgba(0,0,0,0);
+    font-size: 1.2em;
+    font-weight: bold;
 }
 
 /*change the brand and text color */
-.navbar-custom .navbar-brand,
-.navbar-custom .navbar-text {
-    color: black;
+.navbar-custom .navbar-brand {
+    padding: 10px;
+    font-size: 1.5em;
+    color: white;
 }
 
 /* change the link color */
 .navbar-custom .navbar-nav .nav-link {
-    color: black;
+    padding: 15px;
+    color: white;
 }
 
-/* change the color of active or hovered links */
+/* change the color of active or hovered links and brand */
 .navbar-custom .nav-item.active .nav-link,
-.navbar-custom .nav-item:hover .nav-link {
-    color: white;;
+.navbar-custom .nav-item:hover .nav-link,
+.navbar-custom .navbar-brand:hover {
+    color: darkred;
 }
 
 /*
@@ -30,8 +35,12 @@
 
 .hero-wrapper {
     display: block;
-    height: 100vh;
-    background-color: darkred;
+    height: 110vh;
+    background: url(../../static/images/icklyHero.jpg) no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed;
+    background-color: rgba(61, 57, 57, 0.3);
+    clip-path: polygon(100% 0%, 100% 50%, 100% 100%, 100% 100%, 0% 70%, 0 0);
 }
 
 .ickly-header {
