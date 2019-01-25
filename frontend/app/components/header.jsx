@@ -7,8 +7,8 @@ class Header extends React.Component {
 
   render() {
     return (
-            <div className="col-lg-12 text-center">
-              <h1>Ickly</h1>
+            <div className="intro-text col-lg-12 text-center">
+              <h1>Do you really want to eat here?</h1>
                 <p className="lead">A search interface for NYC Restaurant Inspection Results data</p>
             </div>
     )

@@ -10,7 +10,7 @@ class SearchForm extends React.Component {
   render() {
     const { handleSearch, options, isLoading, renderBusinessOptions } = this.props
     return (
-          <div className='col-lg-12 col-lg-offset-0 col-xs-10 col-xs-offset-1'>
+          <div className='col-lg-8 offset-lg-2 col-xs-8 offset-xs-1'>
             <AsyncTypeahead
               placeholder="Search for a restaurant..."
               isLoading={isLoading}

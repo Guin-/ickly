@@ -34,13 +34,12 @@
 */
 
 .hero-wrapper {
-    display: block;
     height: 110vh;
     background: url(../../static/images/icklyHero.jpg) no-repeat center center;
     background-size: cover;
     background-attachment: fixed;
     background-color: rgba(61, 57, 57, 0.3);
-    clip-path: polygon(100% 0%, 100% 50%, 100% 100%, 100% 100%, 0% 70%, 0 0);
+    clip-path: polygon(100% 0%, 100% 50%, 100% 100%, 100% 100%, 0% 80%, 0 0);
 }
 
 .ickly-header {
@@ -48,6 +47,10 @@
     flex-direction: column;
     justify-content: center;
     height: 70vh;
+}
+
+.intro-text {
+    color: white;
 }
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
