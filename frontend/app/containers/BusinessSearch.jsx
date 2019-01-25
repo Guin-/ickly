@@ -4,9 +4,7 @@ import SearchForm from '../components/searchform';
 import Business from '../components/business';
 import Header from '../components/header';
 import Navigation from '../components/nav';
-import InspectionsList from '../components/inspectionsList';
 import { fetchBusiness, resetError, fetchInspections } from '../actions/';
-import { Alert } from 'react-bootstrap';
 import 'react-bootstrap-typeahead/css/Typeahead.css';
 import 'react-bootstrap-typeahead/css/Typeahead-bs4.css';
 
@@ -61,9 +59,9 @@ export class BusinessSearch extends React.Component {
     }
 
     return (
-      <Alert bsStyle='danger' onDismiss={this.handleAlertDismiss.bind(this)}>
+      <div>
         { errorMessage }
-      </Alert>
+      </div>
     )
   }
 
@@ -106,3 +104,4 @@ const mapStateToProps = (state) => ({
 
 
 export default connect(mapStateToProps)(BusinessSearch);
+
