@@ -104,9 +104,4 @@ const mapStateToProps = (state) => ({
 
 
 export default connect(mapStateToProps)(BusinessSearch);
-/*
- *
-      <Alert bsStyle='danger' onDismiss={this.handleAlertDismiss.bind(this)}>
-        { errorMessage }
-      </Alert>
-*/
+
