@@ -1,19 +1,39 @@
 /*
+ Color palette
+*/
+
+:root {
+  --main-brand-color: #844A3F;
+  --off-white: #FCFCFC;
+  --black-olive: #3F3E3E;
+  --black-bean-red: #330202;
+}
+
+body {
+    font-family: Roboto, 'Lucida Grande', Tahoma, Sans-Serif;
+}
+
+h1, h4 {
+    font-family: 'Rammetto One', Georgia, Cambria, serif;
+}
+
+/*
  Customize bootstrap 4 navbar styles
 */
 
 /* change the background color */
 .navbar-custom {
     background-color: rgba(0,0,0,0);
-    font-size: 1.2em;
+    font-size: 1.5em;
     font-weight: bold;
 }
 
-/*change the brand and text color */
+/* change the brand and text color */
 .navbar-custom .navbar-brand {
     padding: 10px;
+    font-family: 'Rametto One';
     font-size: 1.5em;
-    color: white;
+    color: var(--off-white);
 }
 
 /* change the link color */
@@ -26,7 +46,7 @@
 .navbar-custom .nav-item.active .nav-link,
 .navbar-custom .nav-item:hover .nav-link,
 .navbar-custom .navbar-brand:hover {
-    color: darkred;
+    color: var(--main-brand-color);
 }
 
 /*
@@ -53,9 +73,37 @@
     color: white;
 }
 
+.lead {
+    color: var(--off-white);
+}
+
+/*
+  Business Detail
+*/
+
+.business-detail {
+    padding: 20px;
+    color: var(--black-olive);
+}
+
+
+.business-detail p {
+    margin-bottom: .2rem;
+}
+
+.business-name {
+    font-weight: 600;
+    color: var(--black-bean-red);
+}
+
+
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
     .ickly-header {
         height: 50vh;
+    }
+
+    .intro-text h1 {
+        font-size: 2em;
     }
 }
 

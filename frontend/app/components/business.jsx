@@ -3,11 +3,11 @@ import PropTypes from 'prop-types'
 import NumberFormat from 'react-number-format'
 
 const Business = ({business}) => (
-    <div className='col-lg-6 offset-lg-3'>
-      <h4>{business.name}</h4>
-      <h5><NumberFormat value={business.phone} displayType={'text'} format="(###) ###-####"/></h5>
-      <h5>{business.address}</h5>
-      <h5>{business.cuisine_description}</h5>
+    <div className='business-detail col-lg-8 offset-lg-2 col-10 offset-1'>
+      <h4 className="business-name">{business.name}</h4>
+      <p><NumberFormat value={business.phone} displayType={'text'} format="(###) ###-####"/></p>
+      <p>{business.address}</p>
+      <p>{business.cuisine_description}</p>
     </div>
 )
 
