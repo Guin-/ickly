@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Alert } from 'reactstrap';
 import SearchForm from '../components/searchform';
 import Business from '../components/business';
 import Header from '../components/header';
@@ -59,9 +60,11 @@ export class BusinessSearch extends React.Component {
     }
 
     return (
-      <div>
+      <Alert className="col-lg-8 offset-lg-2 col-10 offset-1"
+             toggle={this.handleAlertDismiss.bind(this)}
+             color="danger">
         { errorMessage }
-      </div>
+      </Alert>
     )
   }
 
@@ -89,6 +92,7 @@ export class BusinessSearch extends React.Component {
             </div>
           </section>
           <section>
+            {this.renderErrorMessage()}
             <Business business={business}/>
           </section>
       </div>
