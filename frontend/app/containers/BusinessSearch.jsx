@@ -76,7 +76,7 @@ export class BusinessSearch extends React.Component {
   render() {
     const { business, inspections } = this.props
     return (
-      <div>
+      <>
           <section className="hero-wrapper">
             <Navigation />
             <div className="ickly-header">
@@ -95,7 +95,7 @@ export class BusinessSearch extends React.Component {
             {this.renderErrorMessage()}
             <Business business={business}/>
           </section>
-      </div>
+      </>
     )
   }
 }
