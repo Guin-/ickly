@@ -55,10 +55,13 @@ h1, h4 {
 
 .hero-wrapper {
     height: 110vh;
-    background: url(../../static/images/icklyHero.jpg) no-repeat center center;
+    background-image: linear-gradient(to bottom right, rgba(0, 47, 75, .5), rgba(100, 2, 2, .3)),
+                      url(../../static/images/icklyHero.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
     background-size: cover;
     background-attachment: fixed;
-    background-color: rgba(61, 57, 57, 0.3);
+    background-color: rgba(0, 47, 75);
     clip-path: polygon(100% 0%, 100% 50%, 100% 100%, 100% 100%, 0% 80%, 0 0);
 }
 
