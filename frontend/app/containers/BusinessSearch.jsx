@@ -5,6 +5,7 @@ import SearchForm from '../components/searchform';
 import Business from '../components/business';
 import Header from '../components/header';
 import Navigation from '../components/nav';
+import Inspections from '../components/inspections';
 import { fetchBusiness, resetError, fetchInspections } from '../actions/';
 import 'react-bootstrap-typeahead/css/Typeahead.css';
 import 'react-bootstrap-typeahead/css/Typeahead-bs4.css';
@@ -94,6 +95,9 @@ export class BusinessSearch extends React.Component {
           <section>
             {this.renderErrorMessage()}
             <Business business={business}/>
+          </section>
+          <section>
+            <Inspections inspections={inspections}/>
           </section>
       </>
     )
