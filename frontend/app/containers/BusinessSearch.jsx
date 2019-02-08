@@ -96,7 +96,7 @@ export class BusinessSearch extends React.Component {
             {this.renderErrorMessage()}
             <Business business={business}/>
           </section>
-          <section>
+          <section className="section-spacing">
             <Inspections inspections={inspections}/>
           </section>
       </>
