@@ -80,7 +80,7 @@ export class BusinessSearch extends React.Component {
       <>
           <section className="hero-wrapper">
             <Navigation />
-            <div className="ickly-header">
+            <div className="centered ickly-header">
               <div>
                 <Header />
                 <SearchForm

@@ -13,8 +13,42 @@ body {
     font-family: Roboto, 'Lucida Grande', Tahoma, Sans-Serif;
 }
 
-h1, h4 {
+h1, h2, h4 {
     font-family: 'Rammetto One', Georgia, Cambria, serif;
+}
+
+/*
+  Generic
+*/
+
+.full-height-section {
+    height: 100vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-color: rgba(0, 47, 75);
+    color: white;
+}
+
+.full-height-section p {
+    font-size: 2em;
+    padding: 20px;
+}
+
+.centered {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: calc(100vh - 80px);
+}
+
+.section-spacing {
+    margin: 50px 0;
+}
+
+.icon-img {
+    margin: 20px;
 }
 
 /*
@@ -66,9 +100,6 @@ h1, h4 {
 }
 
 .ickly-header {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     height: 70vh;
 }
 
@@ -89,7 +120,6 @@ h1, h4 {
     color: var(--black-olive);
 }
 
-
 .business-detail p {
     margin-bottom: .2rem;
 }
@@ -99,11 +129,6 @@ h1, h4 {
     color: var(--black-bean-red);
 }
 
-.section-spacing {
-    margin: 50px 0;
-}
-
-
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
     .ickly-header {
         height: 50vh;
@@ -112,8 +137,10 @@ h1, h4 {
     .intro-text h1 {
         font-size: 2em;
     }
+
+    .full-height-section p {
+        font-size: 1.2em;
+        padding: 20px;
+    }
 }
 
-.icon-img {
-    margin: 20px;
-}
