@@ -10,15 +10,25 @@ class Contact extends React.Component {
 
   render() {
     return (
-      <div className="container">
-      <Navigation />
-        <div className="row">
-          <div className="col-lg-8 col-lg-offset-2 text-center">
+      <div className="full-height-section">
+        <Navigation />
+        <div className="centered">
+          <div className="col-lg-8 offset-lg-2 col-xs-10 offset-xs-1 text-center">
             <h2>Contact</h2>
-               <div>
-                    <a href="https://github.com/Guin-/"><img className="icon-img"src={Github}/></a>
-                    <a href="mailto:angelikajarosz@gmail.com"><img className="icon-img"src={mail}/></a>
-               </div>
+            <div>
+              <div className="icon-image-container">
+                <a href="https://github.com/Guin-/">
+                  <img className="icon-img"src={Github}/>
+                </a>
+                <p>@Guin-</p>
+              </div>
+              <div className="icon-image-container">
+                <a href="mailto:angelikajarosz@gmail.com">
+                  <img className="icon-img"src={mail}/>
+                </a>
+                <p>angelikajarosz@gmail.com</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>

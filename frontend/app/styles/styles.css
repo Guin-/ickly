@@ -47,8 +47,18 @@ h1, h2, h4 {
     margin: 50px 0;
 }
 
+.icon-image-container {
+    display: inline-block;
+    padding: 10px 20px;
+}
+
+.icon-image-container p {
+    font-size: 1.2em;
+    padding: 0;
+}
+
 .icon-img {
-    margin: 20px;
+    padding: 20px;
 }
 
 /*
