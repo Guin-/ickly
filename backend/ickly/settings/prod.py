@@ -1,7 +1,5 @@
 from .base import *
 
-DEBUG = True
-
 ALLOWED_HOSTS = ['*']
 
 WEBPACK_LOADER['DEFAULT'].update({
