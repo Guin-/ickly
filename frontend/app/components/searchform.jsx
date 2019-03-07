@@ -8,7 +8,7 @@ class SearchForm extends React.Component {
   }
 
   render() {
-    const { handleSearch, options, isLoading, renderBusinessOptions } = this.props
+    const { handleSearch, options, isLoading, renderBusinessOptions, onChange} = this.props
     return (
           <div className='col-lg-8 offset-lg-2'>
             <AsyncTypeahead
@@ -18,6 +18,7 @@ class SearchForm extends React.Component {
               onSearch={handleSearch}
               options={options}
               renderMenuItemChildren={renderBusinessOptions}
+              onChange={onChange}
             />
           </div>
     );
