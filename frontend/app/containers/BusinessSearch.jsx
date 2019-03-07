@@ -18,8 +18,6 @@ export class BusinessSearch extends React.Component {
       options: [],
       isLoading: false,
     };
-
-    this.handleTypeAheadResultClick = this.handleTypeAheadResultClick.bind(this)
   }
 
   handleSearch(query) {
@@ -40,19 +38,20 @@ export class BusinessSearch extends React.Component {
 
   renderBusinessOptions(option, props, index) {
     return (
-      <div key={option.camis} onClick={(e) => this.handleTypeAheadResultClick(option)}>
+      <div key={option.camis}>
         <strong>{option.name}</strong>
         <p>{option.address}</p>
       </div>
     );
   }
 
-  handleTypeAheadResultClick(option) {
+  onChange(selected) {
     const { dispatch } = this.props
-    dispatch(fetchBusiness(option))
-    dispatch(fetchInspections(option))
+    if(selected.length > 0) {
+      dispatch(fetchBusiness(selected[0]))
+      dispatch(fetchInspections(selected[0]))
+    }
   }
-
 
   renderErrorMessage() {
     const { errorMessage } = this.props
@@ -88,6 +87,7 @@ export class BusinessSearch extends React.Component {
                   options={this.state.options}
                   isLoading={this.state.isLoading}
                   renderBusinessOptions={this.renderBusinessOptions.bind(this)}
+                  onChange={this.onChange.bind(this)}
                 />
               </div>
             </div>
