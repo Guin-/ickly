@@ -62,7 +62,7 @@ module.exports = {
           {
             loader: 'file-loader',
             options: {
-              publicPath: 'static/images/'
+              name: '[name]-[ext]'
             }
           }
         ]
@@ -75,3 +75,4 @@ module.exports = {
     extensions: ['.js', '.jsx']
   },
 }
+
