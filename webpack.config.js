@@ -76,34 +76,3 @@ module.exports = {
   },
 }
 
-/*
-      { test: /\.(svg|woff|woff2|ttf|eot)$/,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name: '[name]-[ext]'
-              //publicPath: 'static/images/'
-            }
-          }
-        ]
-      }
-
-      { test: /\.(svg|jpg|woff|woff2|ttf|eot)$/,
-        use: [
-          'file-loader',
-          {
-            loader: 'image-webpack-loader',
-            options: {
-              mozjpeg: {
-                progressive: true,
-                quality: 65
-              },
-              webp: {
-                quality: 75
-              }
-            }
-          }
-        ]
-      }
-*/

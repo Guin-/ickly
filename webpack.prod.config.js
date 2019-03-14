@@ -21,20 +21,6 @@ var config = require('./webpack.config.js')
       threshold: 10240,
       minRatio: 0.8
     }),
-/*
-    // removes logging and debugging code in React
-    new webpack.DefinePlugin({
-      'process.env': {
-        'NODE_ENV': JSON.stringify('production')
-    }}),
-
-    // minifies code
-    new webpack.optimize.UglifyJsPlugin({
-      compressor: {
-        warnings: false
-      }
-    })
-   */
   ]
 
 module.exports = config
