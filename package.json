@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "A search interface for NYC Restaurant Inspection Results data",
   "main": "index.js",
+  "engines": {
+    "node": "10.12.0"
+  },
   "scripts": {
     "test": "mocha --require babel-register  frontend/test/helpers/browser.js frontend/test/*.spec.js",
     "watch": "node server.js",
@@ -37,7 +40,7 @@
     "image-webpack-loader": "^4.6.0",
     "jsdom": "^10.1.0",
     "mocha": "^5.2.0",
-    "node-sass": "^3.10.0",
+    "node-sass": "^4.11.0",
     "react-addons-test-utils": "^15.5.1",
     "react-hot-loader": "^3.0.0-beta.5",
     "react-test-renderer": "^15.5.4",
