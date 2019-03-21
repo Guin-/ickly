@@ -111,12 +111,12 @@ h1, h2, h4 {
 }
 
 .hero-wrapper::after {
-  position:absolute;
+  position: absolute;
   content: " ";
-  display:block;
-  left:0;
-  bottom:0;
-  width:100%;
+  display: block;
+  left: 0;
+  bottom: 0;
+  width: 100%;
   border-style: solid;
   border-width: 150px 0 0 100vw;
   border-color: transparent transparent transparent #fff;
