@@ -106,7 +106,20 @@ h1, h2, h4 {
     background-size: cover;
     background-attachment: fixed;
     background-color: rgba(0, 47, 75);
-    clip-path: polygon(100% 0%, 100% 50%, 100% 100%, 100% 100%, 0% 80%, 0 0);
+    position: relative;
+    z-index: 1;
+}
+
+.hero-wrapper::after {
+  position:absolute;
+  content: " ";
+  display:block;
+  left:0;
+  bottom:0;
+  width:100%;
+  border-style: solid;
+  border-width: 150px 0 0 100vw;
+  border-color: transparent transparent transparent #fff;
 }
 
 .ickly-header {
