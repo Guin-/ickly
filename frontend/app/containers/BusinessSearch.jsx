@@ -16,6 +16,7 @@ export class BusinessSearch extends React.Component {
     this.state = {
       searchQuery: '',
       options: [],
+      selected: [],
       isLoading: false,
     };
   }
@@ -47,6 +48,7 @@ export class BusinessSearch extends React.Component {
 
   onChange(selected) {
     const { dispatch } = this.props
+    this.setState({selected: selected})
     if(selected.length > 0) {
       dispatch(fetchBusiness(selected[0]))
       dispatch(fetchInspections(selected[0]))
@@ -88,6 +90,7 @@ export class BusinessSearch extends React.Component {
                   isLoading={this.state.isLoading}
                   renderBusinessOptions={this.renderBusinessOptions.bind(this)}
                   onChange={this.onChange.bind(this)}
+                  selected={this.state.selected}
                 />
               </div>
             </div>
