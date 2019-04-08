@@ -36,16 +36,6 @@ export class BusinessSearch extends React.Component {
       .catch(err => console.error('Business Search: handleSearch failed', err))
   };
 
-
-  renderBusinessOptions(option, props, index) {
-    return (
-      <div key={option.camis}>
-        <strong>{option.name}</strong>
-        <p>{option.address}</p>
-      </div>
-    );
-  }
-
   onChange(selected) {
     const { dispatch } = this.props
     this.setState({selected: selected})
@@ -88,7 +78,6 @@ export class BusinessSearch extends React.Component {
                   handleSearch={this.handleSearch.bind(this)}
                   options={this.state.options}
                   isLoading={this.state.isLoading}
-                  renderBusinessOptions={this.renderBusinessOptions.bind(this)}
                   onChange={this.onChange.bind(this)}
                   selected={this.state.selected}
                 />
