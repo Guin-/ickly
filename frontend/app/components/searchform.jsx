@@ -8,9 +8,9 @@ class SearchForm extends React.Component {
   }
 
   onKeyDown(event) {
-        if (event.key === "Enter") {
-            this.typeahead.getInstance().blur();
-          }
+    if (event.key === "Enter") {
+        this.typeahead.getInstance().blur();
+      }
   }
 
   renderBusinessOptions(option, props, index) {
