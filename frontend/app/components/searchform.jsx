@@ -52,7 +52,6 @@ class SearchForm extends React.Component {
 SearchForm.propTypes = {
   handleSearch: PropTypes.func.isRequired,
   options: PropTypes.array,
-  renderBusinessOptions: PropTypes.func.isRequired,
 }
 
 export default SearchForm;

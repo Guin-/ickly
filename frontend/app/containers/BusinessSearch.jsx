@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Alert } from 'reactstrap';
+import { Element, animateScroll as scroll, scroller } from 'react-scroll'
 import SearchForm from '../components/searchform';
 import Business from '../components/business';
 import Header from '../components/header';
@@ -19,6 +20,14 @@ export class BusinessSearch extends React.Component {
       selected: [],
       isLoading: false,
     };
+  }
+
+  scrollTo() {
+    scroller.scrollTo('business-detail', {
+      duration: 1500,
+      delay: 100,
+      smooth: true,
+    })
   }
 
   handleSearch(query) {
@@ -42,6 +51,7 @@ export class BusinessSearch extends React.Component {
     if(selected.length > 0) {
       dispatch(fetchBusiness(selected[0]))
       dispatch(fetchInspections(selected[0]))
+      this.scrollTo()
     }
   }
 
@@ -86,7 +96,9 @@ export class BusinessSearch extends React.Component {
           </section>
           <section>
             {this.renderErrorMessage()}
-            <Business business={business}/>
+            <Element name="business-detail">
+              <Business business={business}/>
+            </Element>
           </section>
           <section className="section-spacing">
             <Inspections inspections={inspections}/>
