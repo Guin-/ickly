@@ -8,14 +8,15 @@ import thunkMiddleware from 'redux-thunk'
 import { createStore, applyMiddleware } from 'redux'
 import { Provider } from 'react-redux'
 import { BrowserRouter as Router } from 'react-router-dom'
+import { composeWithDevTools } from 'redux-devtools-extension';
 import rootReducer from './reducers/index'
 import App from './app'
 
 const store = createStore(
   rootReducer,
-  applyMiddleware(
+  composeWithDevTools(applyMiddleware(
     thunkMiddleware
-  )
+  ))
 )
 
 render(
