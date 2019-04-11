@@ -152,6 +152,14 @@ h1, h2, h4 {
     color: var(--black-bean-red);
 }
 
+/*
+ * Inspections
+*/
+#violations-list {
+    padding-inline-start: 0;
+    list-style-type: none;
+}
+
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
     .ickly-header {
         height: 50vh;

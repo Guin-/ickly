@@ -65,19 +65,42 @@ function handleErrors(response) {
   return response
 }
 
-function dedupeDates(json) {
-  let result = _(json.results)
-                .groupBy('inspection_date')
-                .map(objs => _.assignWith({}, ...objs, function(val1, val2) {
-                      if(val1 && val1 != val2) {
-                        return [].concat(val1, ', ', val2)
-                       }
-                    })
-                  )
+function mergeViolations(violations) {
+    return violations.flatMap(violation => {
+      if (violation.violation_code && violation.violation_description) {
+        return [{
+          code: violation.violation_code,
+          description: violation.violation_description
+        }];
+      } else {
+        return [];
+      }
+    })
+};
+
+function groupAndMergeInspectionsByDate(json) {
+
+  // group and sort inspections by inspection date
+  let groupedByDate = _(json.results)
                 .sortBy('inspection_date')
                 .reverse()
+                .groupBy('inspection_date')
                 .value()
-  return result
+
+  // merge data for each inspection date into one object containing all violations
+  var mergedInspectionsByDate = Object.values(groupedByDate).map(
+    inspectionsByDate => {
+      return {
+        grade: inspectionsByDate[0].grade,
+        inspection_date: inspectionsByDate[0].inspection_date,
+        inspection_type: inspectionsByDate[0].inspection_type,
+        action: inspectionsByDate[0].action,
+        score: inspectionsByDate[0].score,
+        violations: mergeViolations(inspectionsByDate)
+      }
+    })
+
+  return mergedInspectionsByDate
 }
 
 export function fetchBusiness(business) {
@@ -97,7 +120,7 @@ export function fetchBusiness(business) {
     return fetch('/api/v1/businesses/' + business['camis'] + '/inspections/')
     .then(handleErrors)
     .then(response =>
-         response.json().then(json => dedupeDates(json)))
+         response.json().then(json => groupAndMergeInspectionsByDate(json)))
     .then(result => dispatch(inspectionsSuccess(business, result)))
     .catch(error => dispatch(inspectionsFailure(error)))
   }

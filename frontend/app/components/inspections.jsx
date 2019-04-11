@@ -35,6 +35,14 @@ class Inspections extends React.Component {
               pageSize={inspections.length}
               defaultPageSize={10}
               SubComponent={ (row) =>{
+                const violations = row['original']['violations']
+                const formattedViolations = violations.map((violation) => {
+                          return(
+                            <li key={violation.code + row['original']['inspection_date']}>
+                              <p>{violation.code} - {violation.description}</p>
+                            </li>
+                          )
+                })
                 return(
                   <div>
                   <ListGroup>
@@ -51,28 +59,10 @@ class Inspections extends React.Component {
                       </ListGroupItemText>
                     </ListGroupItem>
                     <ListGroupItem>
-                      <ListGroupItemHeading>Violation Description</ListGroupItemHeading>
-                      <ListGroupItemText>
-                        {row['original']['violation_description'] || 'N/A'}
-                      </ListGroupItemText>
-                    </ListGroupItem>
-                    <ListGroupItem>
-                      <ListGroupItemHeading>Violation Code</ListGroupItemHeading>
-                      <ListGroupItemText>
-                        {row['original']['violation_code'] || 'N/A'}
-                      </ListGroupItemText>
-                    </ListGroupItem>
-                    <ListGroupItem>
-                      <ListGroupItemHeading>Critical Flag</ListGroupItemHeading>
-                      <ListGroupItemText>
-                        {row['original']['critical_flag']}
-                      </ListGroupItemText>
-                    </ListGroupItem>
-                    <ListGroupItem>
-                      <ListGroupItemHeading>Grade Date</ListGroupItemHeading>
-                      <ListGroupItemText>
-                        {row['original']['grade_date'] || 'N/A'}
-                      </ListGroupItemText>
+                      <ListGroupItemHeading>Violations</ListGroupItemHeading>
+                      <ul id="violations-list">
+                        {formattedViolations || 'No Violations Found'}
+                      </ul>
                     </ListGroupItem>
                   </ListGroup>
                   </div>
