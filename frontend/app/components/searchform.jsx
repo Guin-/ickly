@@ -7,12 +7,6 @@ class SearchForm extends React.Component {
     super(props);
   }
 
-  onKeyDown(event) {
-    if (event.key === "Enter") {
-        this.typeahead.getInstance().blur();
-      }
-  }
-
   renderBusinessOptions(option, props, index) {
     return (
       <div key={option.camis} onClick={this.handleSelectClick.bind(this)}>
@@ -22,12 +16,22 @@ class SearchForm extends React.Component {
     );
   }
 
+  onFocus(event) {
+    this.typeahead.getInstance().clear()
+  }
+
+  onKeyDown(event) {
+    if (event.key === "Enter") {
+        this.typeahead.getInstance().blur();
+      }
+  }
+
   handleSelectClick(event) {
    this.typeahead.getInstance().blur();
   }
 
   render() {
-    const { handleSearch, options, isLoading, onChange, selected } = this.props
+    const { handleSearch, options, isLoading, onChange } = this.props
     return (
           <div className='col-lg-8 offset-lg-2'>
             <form>
@@ -40,8 +44,8 @@ class SearchForm extends React.Component {
                 options={options}
                 renderMenuItemChildren={this.renderBusinessOptions.bind(this)}
                 onChange={onChange}
-                selected={selected}
                 onKeyDown={this.onKeyDown.bind(this)}
+                onFocus={this.onFocus.bind(this)}
               />
             </form>
           </div>
