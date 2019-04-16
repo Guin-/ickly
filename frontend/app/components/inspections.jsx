@@ -78,7 +78,7 @@ class Inspections extends React.Component {
                       <ListGroupItem>
                         <ListGroupItemHeading>Violations</ListGroupItemHeading>
                         <ul id="violations-list">
-                          {formattedViolations || 'No Violations Found'}
+                          {(violations.length > 0) ? formattedViolations : 'No Violations Found'}
                         </ul>
                       </ListGroupItem>
                     </ListGroup>
