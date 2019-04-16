@@ -2,10 +2,20 @@ import React from 'react';
 import ReactTable from "react-table";
 import 'react-table/react-table.css';
 import { ListGroup, ListGroupItem, ListGroupItemHeading, ListGroupItemText } from 'reactstrap';
+import { Element, animateScroll as scroll, scroller } from 'react-scroll'
 
 class Inspections extends React.Component {
   constructor(props) {
     super(props);
+  }
+
+  scrollTo() {
+    scroller.scrollTo('inspection-detail', {
+      duration: 1500,
+      delay: 100,
+      smooth: true,
+      offset: 20
+    })
   }
 
   render() {
@@ -34,6 +44,13 @@ class Inspections extends React.Component {
               showPagination={false}
               pageSize={inspections.length}
               defaultPageSize={10}
+              onExpandedChange={
+                (newExpanded, index, event) => {
+                  if(newExpanded[index] !== false) {
+                    this.scrollTo()
+                  }
+                }
+              }
               SubComponent={ (row) =>{
                 const violations = row['original']['violations']
                 const formattedViolations = violations.map((violation) => {
@@ -44,28 +61,28 @@ class Inspections extends React.Component {
                           )
                 })
                 return(
-                  <div>
-                  <ListGroup>
-                    <ListGroupItem>
-                      <ListGroupItemHeading>Inspection Type</ListGroupItemHeading>
-                        {row['original']['inspection_type']}
-                      <ListGroupItemText>
-                      </ListGroupItemText>
-                    </ListGroupItem>
-                    <ListGroupItem>
-                      <ListGroupItemHeading>Action</ListGroupItemHeading>
-                      <ListGroupItemText>
-                        {row['original']['action']}
-                      </ListGroupItemText>
-                    </ListGroupItem>
-                    <ListGroupItem>
-                      <ListGroupItemHeading>Violations</ListGroupItemHeading>
-                      <ul id="violations-list">
-                        {formattedViolations || 'No Violations Found'}
-                      </ul>
-                    </ListGroupItem>
-                  </ListGroup>
-                  </div>
+                  <Element name="inspection-detail">
+                    <ListGroup>
+                      <ListGroupItem>
+                        <ListGroupItemHeading>Inspection Type</ListGroupItemHeading>
+                          {row['original']['inspection_type']}
+                        <ListGroupItemText>
+                        </ListGroupItemText>
+                      </ListGroupItem>
+                      <ListGroupItem>
+                        <ListGroupItemHeading>Action</ListGroupItemHeading>
+                        <ListGroupItemText>
+                          {row['original']['action']}
+                        </ListGroupItemText>
+                      </ListGroupItem>
+                      <ListGroupItem>
+                        <ListGroupItemHeading>Violations</ListGroupItemHeading>
+                        <ul id="violations-list">
+                          {formattedViolations || 'No Violations Found'}
+                        </ul>
+                      </ListGroupItem>
+                    </ListGroup>
+                  </Element>
                 );
               }}
             />
