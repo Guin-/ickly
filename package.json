@@ -9,6 +9,7 @@
   "scripts": {
     "test": "mocha --require babel-register  frontend/test/helpers/browser.js frontend/test/*.spec.js",
     "cypress:open": "cypress open",
+    "cy:run": "cypress run",
     "watch": "node server.js",
     "build-production": "webpack --config webpack.prod.config.js --display-error-details",
     "postinstall": "npm run build-production"
