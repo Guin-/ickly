@@ -98,7 +98,7 @@ export class BusinessSearch extends React.Component {
             </Element>
           </section>
           <section className="section-spacing">
-            <Inspections inspections={inspections}/>
+            <Inspections data-test="inspections" inspections={inspections}/>
           </section>
       </>
     )
