@@ -18,4 +18,19 @@ describe('Clean Home Page', function() {
   })
 })
 
-
+describe('Form User Interactions', function() {
+  it('form focuses and clears on click, displays dropdown', function() {
+    cy.get('form').within((el) => {
+      cy.get('input:first')
+        .click()
+        .type('demi')
+        .focused()
+       cy.get('.dropdown-menu').should('exist')
+        .get('li:first')
+       cy.get('input:first')
+        .click()
+        .focused()
+       cy.get('.dropdown-menu').should('not.exist')
+    })
+  })
+})
