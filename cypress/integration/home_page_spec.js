@@ -16,6 +16,28 @@ describe('Clean Home Page', function() {
     cy.get('.business-detail')
     cy.get('[data-test=inspections]').should('not.exist')
   })
+
+  it('has expected state on load', () => {
+    cy.window().its('store').invoke('getState').should('deep.equal', {
+      business: {
+        isFetching: false,
+        selectedBusiness: {},
+        error: null
+      },
+      inspections: {
+        inspections: [],
+        error: null
+      }
+    })
+  })
+
+  it('can navigate between pages', function() {
+    cy.get('.nav-link:first')
+      .click()
+    cy.get('.navbar-brand')
+      .click()
+  })
+
 })
 
 describe('Form User Interactions', function() {
@@ -23,8 +45,7 @@ describe('Form User Interactions', function() {
     cy.get('form').within((el) => {
       cy.get('input:first')
         .click()
-        .type('demi')
-        .focused()
+        .type('demi-monde')
        cy.get('.dropdown-menu').should('exist')
         .get('li:first')
        cy.get('input:first')
@@ -34,3 +55,4 @@ describe('Form User Interactions', function() {
     })
   })
 })
+

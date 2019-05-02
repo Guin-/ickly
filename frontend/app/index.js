@@ -27,4 +27,9 @@ render(
   </Provider>,
   document.getElementById('react-app'))
 
+// give cypress access to the redux store
+if (window.Cypress) {
+  window.store = store
+}
+
 module.hot.accept()
