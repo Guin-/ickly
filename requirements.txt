@@ -6,7 +6,7 @@ Django==1.11.20
 django-crispy-forms==1.6.1
 django-filter==1.0.2
 django-webpack-loader==0.3.3
-djangorestframework==3.4.6
+djangorestframework==3.9.1
 funcsigs==1.0.2
 future==0.15.0
 gunicorn==19.7.1
@@ -22,7 +22,7 @@ PyYAML==4.2b1
 requests==2.20.0
 requests-mock==0.6.0
 six==1.9.0
-urllib3==1.24.1
+urllib3==1.24.2
 vcrpy==1.10.5
 whitenoise==3.3.1
 wrapt==1.10.8
