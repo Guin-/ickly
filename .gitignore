@@ -93,6 +93,7 @@ secret_settings.py
 
 # frontend
 node_modules/
+coverage/
 
 frontend/bundles/
 frontend/output/dist/

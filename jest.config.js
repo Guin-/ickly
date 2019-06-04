@@ -21,14 +21,20 @@ module.exports = {
    collectCoverage: true,
 
   // An array of glob patterns indicating a set of files for which coverage information should be collected
-  // collectCoverageFrom: null,
+   collectCoverageFrom: [
+    "**/frontend/app/components/*.{js,jsx}",
+    "**/frontend/app/containers/*.{js,jsx}",
+   ],
 
   // The directory where Jest should output its coverage files
   coverageDirectory: "coverage",
 
   // An array of regexp pattern strings used to skip coverage collection
    coveragePathIgnorePatterns: [
-     "/node_modules/"
+     "<rootDir>/node_modules/",
+     "<rootDir>/coverage/",
+     "<rootDir>/frontend/bundles/",
+     "<rootDir>/frontend/output/",
    ],
 
   // A list of reporter names that Jest uses when writing coverage reports
