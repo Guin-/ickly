@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from models import Business, Inspection
+from api.models import Business, Inspection
 
 class BusinessSerializer(serializers.ModelSerializer):
     class Meta:

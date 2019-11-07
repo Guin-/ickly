@@ -1,6 +1,7 @@
 from django.conf.urls import url, include
 from rest_framework import routers
-from views import BusinessesViewSet, BusinessInspectionEdgeEndpoint
+
+from api.views import BusinessesViewSet, BusinessInspectionEdgeEndpoint
 
 router = routers.DefaultRouter()
 router.register(r'businesses', BusinessesViewSet)
