@@ -1,10 +1,9 @@
 from rest_framework import viewsets, filters
-from serializers import BusinessSerializer, InspectionSerializer
-from models import Business, Inspection
 
-class BaseEdgeViewSet(viewsets.ModelViewSet):
+from api.models import Business, Inspection
+from api.serializers import BusinessSerializer, InspectionSerializer
 
-    allowed_methods = ['GET', 'POST', 'PATCH', 'DELETE']
+class BaseEdgeViewSet(viewsets.ReadOnlyModelViewSet):
 
     def __init__(self, *args, **kwargs):
         super(BaseEdgeViewSet, self).__init__(*args, **kwargs)
@@ -18,7 +17,7 @@ class BaseEdgeViewSet(viewsets.ModelViewSet):
         parent_id = self.kwargs['parent_id']
         return self.queryset.filter(**{self.parent_field: parent_id})
 
-class BusinessesViewSet(viewsets.ModelViewSet):
+class BusinessesViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = Business.objects.all()
     serializer_class = BusinessSerializer
     filter_backends = (filters.SearchFilter,)
