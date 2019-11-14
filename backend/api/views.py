@@ -13,7 +13,12 @@ class BaseEdgeViewSet(viewsets.ReadOnlyModelViewSet):
     def get_queryset(self):
         """
         Returns QuerySet of all items on the parent
+        Set swagger_fake_view attribute when view
+        is artificially created as part of a swagger schema request
         """
+        if getattr(self, 'swagger_fake_view', False):
+            return None
+
         parent_id = self.kwargs['parent_id']
         return self.queryset.filter(**{self.parent_field: parent_id})
 
