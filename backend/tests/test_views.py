@@ -17,7 +17,7 @@ def test_businesses_endpoint_list_response(client):
     assert response.data['count'] == 20619
     assert len(response.data['results']) == 100
     for d in response.data['results']:
-        assert d.keys() == expected_keys
+        assert list(d.keys()) == expected_keys
 
 
 @pytest.mark.django_db
@@ -25,7 +25,7 @@ def test_businesses_endpoint_detail_response(client):
     response = client.get('/api/v1/businesses/40394054/')
     expected_keys = ['camis', 'name', 'address', 'phone', 'cuisine_description']
     assert response.status_code == 200
-    assert expected_keys == response.data.keys()
+    assert expected_keys == list(response.data.keys())
     assert len(response.data) == 5
     assert response.data['camis'] == '40394054'
 
@@ -38,6 +38,6 @@ def test_business_inspection_edge_endpoint_response(client):
                      'score', 'grade', 'grade_date']
     assert response.status_code == 200
     for d in response.data['results']:
-        assert d.keys() == expected_keys
+        assert list(d.keys()) == expected_keys
         assert d['business'] == '40394054'
 
