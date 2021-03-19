@@ -8,7 +8,7 @@ Django==1.11.23
 django-crispy-forms==1.6.1
 django-filter==1.0.2
 django-webpack-loader==0.3.3
-djangorestframework==3.9.1
+djangorestframework==3.11.2
 drf-yasg==1.17.0
 funcsigs==1.0.2
 future==0.15.0
