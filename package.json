@@ -43,7 +43,7 @@
     "image-webpack-loader": "^4.6.0",
     "jest": "^24.8.0",
     "jest-dom": "^3.2.2",
-    "jsdom": "^10.1.0",
+    "jsdom": "^16.5.0",
     "mocha": "^5.2.0",
     "node-sass": "^4.11.0",
     "react-hot-loader": "^3.0.0-beta.5",
